@@ -1,24 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
-const App = (props: any) => {
-  const state = useState(0);
+import data from "./data/products.json";
 
-  return (
-    <div>
-      <button onClick={() => state[1](state[0] + 1)}>{state[0]}</button>ello!
-      {props.children}
-    </div>
-  );
+const App = () => {
+  return <img src={data[0].categoryImage.desktop}></img>;
 };
 
-const Text = () => {
-  return <div>Helo</div>;
-};
-
-ReactDOM.render(
-  <App>
-    <Text />
-  </App>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));

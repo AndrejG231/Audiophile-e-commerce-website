@@ -1,6 +1,7 @@
 const path = require("path");
 const mode = process.env.mode;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "..", "src", "index.tsx"),
@@ -45,7 +46,10 @@ module.exports = {
       filename: "index.html",
       template: path.resolve(__dirname, "..", "public", "index.html"),
     }),
+    new CopyPlugin({
+      patterns: [
+        { from: path.join(__dirname, "..", "public", "assets"), to: "assets" },
+      ],
+    }),
   ],
-  mode: "development",
-  devtool: "source-map",
 };
