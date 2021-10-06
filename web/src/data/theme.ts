@@ -59,9 +59,9 @@ const fonts = {
     `,
   h6: `
       font-family: 'Manrope', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.125rem;
       text-transform: uppercase;
-      line-height: 2.0625rem;
+      line-height: 1.5rem;
       letter-spacing: 1.7px;
       font-weight: 700;
       color: ${colors.black};
