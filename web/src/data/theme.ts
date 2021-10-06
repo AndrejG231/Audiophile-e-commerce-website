@@ -5,6 +5,9 @@ const colors = {
   lightBlack: "#101010",
   gray: "#F1F1F1",
   lightGray: "#FAFAFA",
+  error: "#CD2C2C",
+  grayLine: "#979797",
+  white: "#FFF",
 };
 
 const fonts = {
@@ -79,6 +82,13 @@ const fonts = {
       line-height: 1.5625rem;
       letter-spacing: 1px;
       font-weight: 700;
+      color: ${colors.brown};
+  `,
+  body: `
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      line-height: 25px;
+      font-weight: 500;
       color: ${colors.brown};
   `,
 };

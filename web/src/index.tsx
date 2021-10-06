@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Router from "./Router";
 
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
@@ -8,7 +9,7 @@ import theme from "./data/theme";
 // Main theme based on design system
 const GlobalStyle = createGlobalStyle`
 /* Body */
-  body *{
+  body, *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,6 +39,7 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <GlobalStyle />
+    <Router />
   </ThemeProvider>,
   document.getElementById("root")
 );

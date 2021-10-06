@@ -1,0 +1,8 @@
+{
+  "logo": "./assets/shared/desktop/logo.svg",
+  "hamburgerIcon": "./assets/shared/tablet/icon-hamburger.svg",
+  "cartIcon": "./assets/shared/desktop/icon-cart.svg",
+  "mobile": {
+    "header": "./assets/home/mobile/image-header.jpg"
+  }
+}
