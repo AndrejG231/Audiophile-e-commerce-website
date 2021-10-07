@@ -1,4 +1,5 @@
 import React from "react";
+import BestGear from "../components/footer/BestGear";
 import Header from "../components/header";
 import SelectCategory from "../components/home_category_select";
 import {
@@ -34,6 +35,7 @@ class Home extends React.Component {
           <ZX9ProductView />
           <ZX7ProductView />
           <YX1ProductView />
+          <BestGear />
         </main>
       </>
     );
