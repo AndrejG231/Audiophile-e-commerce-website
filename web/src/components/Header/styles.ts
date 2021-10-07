@@ -69,7 +69,7 @@ export const NewProductArea = styled.div`
 export const NewProductAnnounce = styled.span`
   display: block;
   ${({ theme }) => theme.fonts.overline};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.gray};
   text-align: center;
   height: 19px;
 `;
@@ -85,7 +85,7 @@ export const NewProductTitle = styled.h1`
 
 export const NewProductDetail = styled.p`
   ${({ theme }) => theme.fonts.manrope};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.gray};
   margin: auto;
   font-weight: 200;
   letter-spacing: 0px;
@@ -94,7 +94,9 @@ export const NewProductDetail = styled.p`
   height: 80px;
   margin-top: 20px;
   text-align: center;
-  max-width: 328px;
+  max-width: 350px;
+  padding-left: 13px;
+  padding-right: 13px;
 `;
 
 export const SeeProductButton = styled(ButtonColor)`
