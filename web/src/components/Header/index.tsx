@@ -1,11 +1,6 @@
 import React from "react";
 import {
   Container,
-  NavbarContainer,
-  Navbar,
-  NavButton,
-  Logo,
-  CartButton,
   NavUnderline,
   NewProductArea,
   NewProductAnnounce,
@@ -18,13 +13,6 @@ class Header extends React.Component {
   render() {
     return (
       <Container>
-        <NavbarContainer>
-          <Navbar>
-            <NavButton />
-            <Logo />
-            <CartButton />
-          </Navbar>
-        </NavbarContainer>
         <NavUnderline />
         <NewProductArea>
           <NewProductAnnounce>New product</NewProductAnnounce>
