@@ -62,7 +62,6 @@ export const NavUnderline = styled.div`
 export const NewProductArea = styled.div`
   margin: auto;
   margin-top: 110px;
-  width: 328px;
   height: 290px;
   position: relative;
 `;
@@ -76,16 +75,18 @@ export const NewProductAnnounce = styled.span`
 `;
 
 export const NewProductTitle = styled.h1`
-  ${({ theme }) => theme.fonts.h2};
+  ${({ theme }) => theme.fonts.h3};
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
   margin-top: 15px;
   height: 80px;
+  font-size: 36px;
 `;
 
 export const NewProductDetail = styled.p`
   ${({ theme }) => theme.fonts.manrope};
   color: ${({ theme }) => theme.colors.white};
+  margin: auto;
   font-weight: 200;
   letter-spacing: 0px;
   text-transform: none;
@@ -93,6 +94,7 @@ export const NewProductDetail = styled.p`
   height: 80px;
   margin-top: 20px;
   text-align: center;
+  max-width: 328px;
 `;
 
 export const SeeProductButton = styled(ButtonColor)`
