@@ -10,6 +10,11 @@ const colors = {
   white: "#FFF",
 };
 
+// Main layout optimized at min-width: 350px;
+const query = {
+  md: "@media screen and (min-width: 570px)", // tablet
+};
+
 const fonts = {
   manrope: "font-family: 'Manrope', sans-serif;",
   h1: `
@@ -93,6 +98,6 @@ const fonts = {
   `,
 };
 
-const theme = { colors, fonts };
+const theme = { colors, fonts, query };
 
 export default theme;

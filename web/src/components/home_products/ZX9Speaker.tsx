@@ -10,6 +10,7 @@ const ProductSpeakerBox = styled.div`
   border-radius: 8px;
   margin: 0 24px 0 24px;
   overflow: hidden;
+  margin-top: 120px;
 `;
 
 const CircleBackground = styled.img.attrs(() => ({

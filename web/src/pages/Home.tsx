@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/header";
 import SelectCategory from "../components/home_category_select";
-import { ZX9ProductView } from "../components/home_products";
+import { ZX9ProductView, ZX7ProductView } from "../components/home_products";
 import Navbar from "../components/navbar";
 import { Spacer } from "../components/util";
 import images from "../data/images.json";
@@ -27,8 +27,8 @@ class Home extends React.Component {
             category="earphones"
             image={images.categoryThumbnail.earphones}
           />
-          <Spacer height={120} />
           <ZX9ProductView />
+          <ZX7ProductView />
         </main>
       </>
     );

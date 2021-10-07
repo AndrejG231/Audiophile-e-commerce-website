@@ -6,7 +6,8 @@
   "circlePattern": "assets/home/desktop/pattern-circles.svg",
   "mobile": {
     "header": "./assets/home/mobile/image-header.jpg",
-    "speakerZX9": "assets/home/mobile/image-speaker-zx9.png"
+    "speakerZX9": "assets/home/mobile/image-speaker-zx9.png",
+    "speakerZX7": "assets/home/mobile/image-speaker-zx7.jpg"
   },
   "categoryThumbnail": {
     "earphones": "assets/shared/desktop/image-category-thumbnail-earphones.png",
