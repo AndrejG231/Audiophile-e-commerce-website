@@ -48,6 +48,10 @@ const SeeProductButton = styled(ButtonColor)`
     background: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
   }
+  /* Hide speaker under button (very small screen fix) */
+  @media screen and (max-width: 320px) {
+    background: ${({ theme }) => theme.colors.gray};
+  }
 `;
 
 // Component
