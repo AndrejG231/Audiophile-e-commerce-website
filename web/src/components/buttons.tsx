@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const ButtonColor = styled.button`
   outline: none;
   border: none;
-  background: ${({ theme }) => theme.colors.brown};
+  cursor: pointer;
   ${({ theme }) => theme.fonts.subtitle};
   color: ${({ theme }) => theme.colors.white};
   border-radius: 1px;
   padding: 15px 30px;
-  cursor: pointer;
-  &:hover {
-    background: ${({ theme }) => theme.colors.lightBrown};
-  }
+  height: 48px;
+  width: 160px;
+  padding: 0;
+  line-height: 48px;
 `;

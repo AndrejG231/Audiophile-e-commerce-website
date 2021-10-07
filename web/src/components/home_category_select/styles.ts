@@ -24,17 +24,6 @@ export const ImagePlaceholder = styled.img`
   transform: translateX(-50%);
 `;
 
-export type SpacerProps = {
-  width?: number;
-  height?: number;
-};
-
-export const Spacer = styled.div<SpacerProps>`
-  position: relative;
-  width: ${({ width }) => width ?? 0}px;
-  height: ${({ height }) => height ?? 0}px;
-`;
-
 export const ArrowButtonContainer = styled.button`
   position: relative;
   outline: none;

@@ -103,4 +103,8 @@ export const SeeProductButton = styled(ButtonColor)`
   margin-top: 25px;
   margin-left: 50%;
   transform: translateX(-50%);
+  background: ${({ theme }) => theme.colors.brown};
+  &:hover {
+    background: ${({ theme }) => theme.colors.lightBrown};
+  }
 `;
