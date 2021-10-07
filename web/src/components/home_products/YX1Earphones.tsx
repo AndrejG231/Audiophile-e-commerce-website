@@ -5,7 +5,7 @@ import images from "../../data/images.json";
 
 const ProductContainer = styled.div`
   position: relative;
-  height: 424px;
+  height: 420px;
   background: transparent;
   border-radius: 8px;
   margin: 0 24px 0 24px;
@@ -28,7 +28,7 @@ const ProductInfoBox = styled.div`
   border-radius: 8px;
   height: 200px;
   margin: 0;
-  margin-top: 24px;
+  margin-top: 20px;
   padding: 40px 24px;
 `;
 
@@ -37,7 +37,6 @@ const ProductSpeakerTitle = styled.span`
   ${({ theme }) => theme.fonts.h4};
   text-align: left;
   color: ${({ theme }) => theme.colors.black};
-  margin: 0;
 `;
 
 const SeeProductButton = styled(ButtonColor)`

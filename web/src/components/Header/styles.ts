@@ -10,6 +10,8 @@ export const Container = styled.header`
   background-repeat: no-repeat;
   background-position: center;
   padding-bottom: 100px;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const NavUnderline = styled.div`
