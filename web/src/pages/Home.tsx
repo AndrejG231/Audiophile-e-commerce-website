@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ArrowButtonContainer } from "../components/buttons";
 import Header from "../components/Header";
 import images from "../data/images.json";
 
@@ -38,10 +37,29 @@ const Spacer = styled.div<SpacerProps>`
   height: ${({ height }) => height ?? 0}px;
 `;
 
+export const ArrowButtonContainer = styled.button`
+  position: relative;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.grayLine};
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 13px;
+  place-items: center;
+  margin: auto;
+  height: 13px;
+  &:hover {
+    color: ${({ theme }) => theme.colors.brown};
+  }
+`;
+
 const Arrow = styled.img.attrs(() => ({
   src: images.arrowIcon,
 }))`
-  height: 13px;
+  height: 10px;
 `;
 
 const ArrowText = styled.span`
@@ -52,14 +70,24 @@ const ArrowText = styled.span`
   color: inherit;
 `;
 
+const CategoryName = styled.span`
+  position: relative;
+  text-align: center;
+  display: block;
+  ${({ theme }) => theme.fonts.subtitle};
+  font-size: 15px;
+  color: ${({ theme }) => theme.colors.black};
+`;
+
 type SelectCategoryProps = { category: string; image: string };
 
-class SelectCategory extends React.Component<SelectCategoryProps> {
+class SelectCategory extends React.PureComponent<SelectCategoryProps> {
   render() {
     return (
       <Box>
         <InboxOverlay />
         <ImagePlaceholder src={this.props.image} />
+        <CategoryName>{this.props.category}</CategoryName>
         <ArrowButtonContainer>
           <ArrowText>Shop</ArrowText>
           <Arrow />
