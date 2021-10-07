@@ -15,6 +15,7 @@ export const NavButton = styled.div`
   margin: auto;
   margin-right: auto;
   margin-left: 24px;
+  cursor: pointer;
 `;
 
 export const Logo = styled.div`
@@ -33,6 +34,7 @@ export const CartButton = styled.div`
   margin: auto;
   margin-right: 24px;
   margin-left: auto;
+  cursor: pointer;
 `;
 
 export const NavbarContainer = styled.div`
