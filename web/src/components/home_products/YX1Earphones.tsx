@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ButtonColor } from "../buttons";
-import images from "../../data/images.json";
+import images from "../../data/images";
 
 const ProductContainer = styled.div`
   position: relative;

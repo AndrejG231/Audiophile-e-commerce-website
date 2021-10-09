@@ -34,6 +34,12 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     outline: none;
   }
+
+  a {
+    text-decoration: none;
+    outline: none;
+    border: none;
+  }
 `;
 
 ReactDOM.render(

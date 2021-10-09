@@ -10,7 +10,7 @@ import {
 } from "../components/home_products";
 import Navbar from "../components/navbar";
 import { Spacer } from "../components/util";
-import images from "../data/images.json";
+import images from "../data/images";
 
 // Main
 class Home extends React.Component {

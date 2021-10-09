@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import images from "../../data/images.json";
+import images from "../../data/images";
 
 const GearContainer = styled.div`
   position: relative;

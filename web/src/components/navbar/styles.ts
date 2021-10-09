@@ -1,4 +1,4 @@
-import images from "../../data/images.json";
+import images from "../../data/images";
 import styled from "styled-components";
 
 export const Bar = styled.nav`

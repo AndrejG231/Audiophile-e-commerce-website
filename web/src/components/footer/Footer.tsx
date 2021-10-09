@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import images from "../../data/images.json";
+import images from "../../data/images";
 import React from "react";
 
 const Box = styled.div`
