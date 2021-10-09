@@ -4,6 +4,9 @@
   "cartIcon": "./assets/shared/desktop/icon-cart.svg",
   "arrowIcon": "assets/shared/desktop/icon-arrow-right.svg",
   "circlePattern": "assets/home/desktop/pattern-circles.svg",
+  "iconFacebook": "assets/shared/desktop/icon-facebook.svg",
+  "iconTwitter": "assets/shared/desktop/icon-twitter.svg",
+  "iconInstagram": "assets/shared/desktop/icon-instagram.svg",
   "mobile": {
     "header": "./assets/home/mobile/image-header.jpg",
     "speakerZX9": "assets/home/mobile/image-speaker-zx9.png",
