@@ -8,7 +8,7 @@ export const Container = styled.header`
   background: url(${images.mobile.header}), black;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center bottom;
   padding-bottom: 100px;
   width: 100%;
   overflow: hidden;
@@ -30,7 +30,7 @@ export const NewProductArea = styled.div`
 export const NewProductAnnounce = styled.span`
   display: block;
   ${({ theme }) => theme.fonts.overline};
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.grayLine};
   text-align: center;
   height: 19px;
 `;
@@ -46,7 +46,7 @@ export const NewProductTitle = styled.h1`
 
 export const NewProductDetail = styled.p`
   ${({ theme }) => theme.fonts.manrope};
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.grayLine};
   margin: auto;
   font-weight: 200;
   letter-spacing: 0px;
