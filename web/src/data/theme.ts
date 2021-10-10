@@ -94,7 +94,7 @@ const fonts = {
       font-size: 15px;
       line-height: 25px;
       font-weight: 500;
-      color: ${colors.brown};
+      color: ${colors.grayLine};
   `,
 };
 
