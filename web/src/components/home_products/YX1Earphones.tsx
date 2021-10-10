@@ -53,18 +53,16 @@ const SeeProductButton = styled(ButtonColor)`
 `;
 
 // Component
-class YX1Earphones extends React.PureComponent {
-  render() {
-    return (
-      <ProductContainer>
-        <ProductImage />
-        <ProductInfoBox>
-          <ProductSpeakerTitle>YX1 EARPHONES</ProductSpeakerTitle>
-          <SeeProductButton>see product</SeeProductButton>
-        </ProductInfoBox>
-      </ProductContainer>
-    );
-  }
-}
+const YX1Earphones = () => {
+  return (
+    <ProductContainer>
+      <ProductImage />
+      <ProductInfoBox>
+        <ProductSpeakerTitle>YX1 EARPHONES</ProductSpeakerTitle>
+        <SeeProductButton>see product</SeeProductButton>
+      </ProductInfoBox>
+    </ProductContainer>
+  );
+};
 
 export default YX1Earphones;

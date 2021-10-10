@@ -8,21 +8,19 @@ import {
 } from "./styles";
 import React from "react";
 
-class Navbar extends React.PureComponent {
-  render() {
-    return (
-      <>
-        <NavbarContainer>
-          <Bar>
-            <NavButton />
-            <Logo />
-            <CartButton />
-          </Bar>
-        </NavbarContainer>
-        <NavUnderline />
-      </>
-    );
-  }
-}
+const Navbar = () => {
+  return (
+    <>
+      <NavbarContainer>
+        <Bar>
+          <NavButton />
+          <Logo />
+          <CartButton />
+        </Bar>
+      </NavbarContainer>
+      <NavUnderline />
+    </>
+  );
+};
 
 export default Navbar;

@@ -86,33 +86,31 @@ const SocialIcon = styled.img`
   object-fit: contain;
 `;
 
-class Footer extends React.PureComponent {
-  render() {
-    return (
-      <Box>
-        <TopLine />
-        <Logo />
-        <NavContainer>
-          <NavItem>home</NavItem>
-          <NavItem>headphones</NavItem>
-          <NavItem>speakers</NavItem>
-          <NavItem>earphones</NavItem>
-        </NavContainer>
-        <AudiophileDesc>
-          Audiophile is an all in one stop to fulfill your audio needs. We're a
-          small team of music lovers and sound specialists who are devoted to
-          helping you get the most out of personal audio. Come and visit our
-          demo facility - we’re open 7 days a week.
-        </AudiophileDesc>
-        <CopyrightClaim>Copyright 2021. All Rights Reserved</CopyrightClaim>
-        <SocialIconsBar>
-          <SocialIcon src={images.iconFacebook} />
-          <SocialIcon src={images.iconTwitter} />
-          <SocialIcon src={images.iconInstagram} />
-        </SocialIconsBar>
-      </Box>
-    );
-  }
-}
+const Footer = () => {
+  return (
+    <Box>
+      <TopLine />
+      <Logo />
+      <NavContainer>
+        <NavItem>home</NavItem>
+        <NavItem>headphones</NavItem>
+        <NavItem>speakers</NavItem>
+        <NavItem>earphones</NavItem>
+      </NavContainer>
+      <AudiophileDesc>
+        Audiophile is an all in one stop to fulfill your audio needs. We're a
+        small team of music lovers and sound specialists who are devoted to
+        helping you get the most out of personal audio. Come and visit our demo
+        facility - we’re open 7 days a week.
+      </AudiophileDesc>
+      <CopyrightClaim>Copyright 2021. All Rights Reserved</CopyrightClaim>
+      <SocialIconsBar>
+        <SocialIcon src={images.iconFacebook} />
+        <SocialIcon src={images.iconTwitter} />
+        <SocialIcon src={images.iconInstagram} />
+      </SocialIconsBar>
+    </Box>
+  );
+};
 
 export default Footer;

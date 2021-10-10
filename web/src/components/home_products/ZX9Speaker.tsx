@@ -69,25 +69,23 @@ const SeeProductButton = styled(ButtonColor)`
 
 // Component
 
-class ZX9ProductView extends React.PureComponent {
-  render() {
-    return (
-      <ProductSpeakerBox>
-        <CircleBackground />
-        <ZX9Image />
-        <ProductSpeakerTitle>
-          ZX9
-          <br />
-          SPEAKER
-        </ProductSpeakerTitle>
-        <ProductSpeakerDetail>
-          Upgrade to premium speakers that are phenomenally built to deliver
-          truly remarkable sound.
-        </ProductSpeakerDetail>
-        <SeeProductButton>see product</SeeProductButton>
-      </ProductSpeakerBox>
-    );
-  }
-}
+const ZX9ProductView = () => {
+  return (
+    <ProductSpeakerBox>
+      <CircleBackground />
+      <ZX9Image />
+      <ProductSpeakerTitle>
+        ZX9
+        <br />
+        SPEAKER
+      </ProductSpeakerTitle>
+      <ProductSpeakerDetail>
+        Upgrade to premium speakers that are phenomenally built to deliver truly
+        remarkable sound.
+      </ProductSpeakerDetail>
+      <SeeProductButton>see product</SeeProductButton>
+    </ProductSpeakerBox>
+  );
+};
 
 export default ZX9ProductView;

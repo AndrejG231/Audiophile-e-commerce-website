@@ -9,19 +9,17 @@ export const routes = {
   category: (category: string) => `/category/${category}/`,
 };
 
-class Router extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Route path={routes.home} exact component={() => <Home />} />
-        <Route
-          path={routes.category(":category")}
-          exact
-          component={() => <Category />}
-        />
-      </BrowserRouter>
-    );
-  }
-}
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <Route path={routes.home} exact component={() => <Home />} />
+      <Route
+        path={routes.category(":category")}
+        exact
+        component={() => <Category />}
+      />
+    </BrowserRouter>
+  );
+};
 
 export default Router;

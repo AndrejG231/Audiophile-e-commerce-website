@@ -13,35 +13,33 @@ import { Spacer } from "../components/util";
 import images from "../data/images";
 
 // Main
-class Home extends React.Component {
-  render() {
-    return (
-      <>
-        <Navbar />
-        <Header />
-        <main>
-          <Spacer height={32} />
-          <SelectCategory
-            category="headphones"
-            image={images.categoryThumbnail.headphones}
-          />
-          <SelectCategory
-            category="speakers"
-            image={images.categoryThumbnail.speakers}
-          />
-          <SelectCategory
-            category="earphones"
-            image={images.categoryThumbnail.earphones}
-          />
-          <ZX9ProductView />
-          <ZX7ProductView />
-          <YX1ProductView />
-          <BestGear />
-          <Footer />
-        </main>
-      </>
-    );
-  }
-}
+const Home = () => {
+  return (
+    <>
+      <Navbar />
+      <Header />
+      <main>
+        <Spacer height={32} />
+        <SelectCategory
+          category="headphones"
+          image={images.categoryThumbnail.headphones}
+        />
+        <SelectCategory
+          category="speakers"
+          image={images.categoryThumbnail.speakers}
+        />
+        <SelectCategory
+          category="earphones"
+          image={images.categoryThumbnail.earphones}
+        />
+        <ZX9ProductView />
+        <ZX7ProductView />
+        <YX1ProductView />
+        <BestGear />
+        <Footer />
+      </main>
+    </>
+  );
+};
 
 export default Home;

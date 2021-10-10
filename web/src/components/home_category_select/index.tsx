@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { routes } from "../../Router";
 import {
@@ -13,22 +13,20 @@ import {
 
 type SelectCategoryProps = { category: string; image: string };
 
-class SelectCategory extends React.PureComponent<SelectCategoryProps> {
-  render() {
-    return (
-      <Box>
-        <InboxOverlay />
-        <ImagePlaceholder src={this.props.image} />
-        <CategoryName>{this.props.category}</CategoryName>
-        <Link to={routes.category(this.props.category)}>
-          <ArrowButtonContainer>
-            <ArrowText>Shop</ArrowText>
-            <Arrow />
-          </ArrowButtonContainer>
-        </Link>
-      </Box>
-    );
-  }
-}
+const SelectCategory: FC<SelectCategoryProps> = ({ image, category }) => {
+  return (
+    <Box>
+      <InboxOverlay />
+      <ImagePlaceholder src={image} />
+      <CategoryName>{category}</CategoryName>
+      <Link to={routes.category(category)}>
+        <ArrowButtonContainer>
+          <ArrowText>Shop</ArrowText>
+          <Arrow />
+        </ArrowButtonContainer>
+      </Link>
+    </Box>
+  );
+};
 
 export default SelectCategory;

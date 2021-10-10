@@ -8,24 +8,23 @@ import {
   SeeProductButton,
 } from "./styles";
 
-class Header extends React.Component {
-  render() {
-    return (
-      <Container>
-        <NewProductArea>
-          <NewProductAnnounce>New product</NewProductAnnounce>
-          <NewProductTitle>
-            XX99 Mark II
-            <br /> Headphones
-          </NewProductTitle>
-          <NewProductDetail>
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </NewProductDetail>
-          <SeeProductButton>See product</SeeProductButton>
-        </NewProductArea>
-      </Container>
-    );
-  }
-}
+const Header = () => {
+  return (
+    <Container>
+      <NewProductArea>
+        <NewProductAnnounce>New product</NewProductAnnounce>
+        <NewProductTitle>
+          XX99 Mark II
+          <br /> Headphones
+        </NewProductTitle>
+        <NewProductDetail>
+          Experience natural, lifelike audio and exceptional build quality made
+          for the passionate music enthusiast.
+        </NewProductDetail>
+        <SeeProductButton>See product</SeeProductButton>
+      </NewProductArea>
+    </Container>
+  );
+};
+
 export default Header;

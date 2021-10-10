@@ -56,16 +56,14 @@ const SeeProductButton = styled(ButtonColor)`
 
 // Component
 
-class ZX7ProductView extends React.PureComponent {
-  render() {
-    return (
-      <ProductSpeakerBox>
-        <ZX7Image />
-        <ProductSpeakerTitle>ZX7 SPEAKER</ProductSpeakerTitle>
-        <SeeProductButton>see product</SeeProductButton>
-      </ProductSpeakerBox>
-    );
-  }
-}
+const ZX7ProductView = () => {
+  return (
+    <ProductSpeakerBox>
+      <ZX7Image />
+      <ProductSpeakerTitle>ZX7 SPEAKER</ProductSpeakerTitle>
+      <SeeProductButton>see product</SeeProductButton>
+    </ProductSpeakerBox>
+  );
+};
 
 export default ZX7ProductView;
