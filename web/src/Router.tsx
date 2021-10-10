@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 export const routes = {
   home: "/",
   category: (category: string) => `/category/${category}/`,
+  product: (product: string) => `/product/${product}/`,
 };
 
 const Router = () => {

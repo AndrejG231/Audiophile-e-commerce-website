@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import images from "../../data/images";
 
-const GearContainer = styled.div`
+const GearContainer = styled.aside`
   position: relative;
   min-height: 700px;
   background: transparent;

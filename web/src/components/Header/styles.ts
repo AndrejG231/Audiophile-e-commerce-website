@@ -14,11 +14,6 @@ export const Container = styled.header`
   overflow: hidden;
 `;
 
-export const NavUnderline = styled.div`
-  width: 100%;
-  height: 1px;
-  background: ${({ theme }) => theme.colors.grayLine};
-`;
 
 export const NewProductArea = styled.div`
   margin: auto;
