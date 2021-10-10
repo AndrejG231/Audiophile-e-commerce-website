@@ -1,16 +1,26 @@
-import { NavbarContainer, Bar, NavButton, Logo, CartButton } from "./styles";
+import {
+  NavbarContainer,
+  Bar,
+  NavButton,
+  Logo,
+  CartButton,
+  NavUnderline,
+} from "./styles";
 import React from "react";
 
 class Navbar extends React.PureComponent {
   render() {
     return (
-      <NavbarContainer>
-        <Bar>
-          <NavButton />
-          <Logo />
-          <CartButton />
-        </Bar>
-      </NavbarContainer>
+      <>
+        <NavbarContainer>
+          <Bar>
+            <NavButton />
+            <Logo />
+            <CartButton />
+          </Bar>
+        </NavbarContainer>
+        <NavUnderline />
+      </>
     );
   }
 }

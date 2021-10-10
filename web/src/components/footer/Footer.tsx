@@ -38,10 +38,16 @@ const NavContainer = styled.nav`
 
 const NavItem = styled.span`
   display: block;
+  margin: auto;
   ${({ theme }) => theme.fonts.subtitle};
   text-align: center;
   letter-spacing: 2px;
   color: ${({ theme }) => theme.colors.white};
+  cursor: pointer;
+  width: min-content;
+  &:hover {
+    border-bottom: 2px solid ${({ theme }) => theme.colors.lightBrown};
+  }
 `;
 
 const AudiophileDesc = styled.p`
@@ -76,6 +82,7 @@ const SocialIconsBar = styled.div`
 const SocialIcon = styled.img`
   height: 100%;
   width: 100%;
+  cursor: pointer;
   object-fit: contain;
 `;
 

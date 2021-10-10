@@ -43,3 +43,9 @@ export const NavbarContainer = styled.div`
   padding-top: 32.5px;
   background: ${({ theme }) => theme.colors.black};
 `;
+
+export const NavUnderline = styled.div`
+  width: 100%;
+  height: 1px;
+  background: ${({ theme }) => theme.colors.grayLine};
+`;

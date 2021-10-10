@@ -5,7 +5,7 @@ import images from "../../data/images";
 
 const ProductContainer = styled.div`
   position: relative;
-  height: 420px;
+  min-height: 420px;
   background: transparent;
   border-radius: 8px;
   margin: 0 24px 0 24px;

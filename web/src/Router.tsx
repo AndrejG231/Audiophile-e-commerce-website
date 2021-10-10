@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
+import Category from "./pages/Category";
 import Home from "./pages/Home";
 
 export const routes = {
@@ -16,7 +17,7 @@ class Router extends React.Component {
         <Route
           path={routes.category(":category")}
           exact
-          component={() => <Home />}
+          component={() => <Category />}
         />
       </BrowserRouter>
     );

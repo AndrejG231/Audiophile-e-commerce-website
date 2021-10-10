@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Container,
-  NavUnderline,
   NewProductArea,
   NewProductAnnounce,
   NewProductTitle,
@@ -13,7 +12,6 @@ class Header extends React.Component {
   render() {
     return (
       <Container>
-        <NavUnderline />
         <NewProductArea>
           <NewProductAnnounce>New product</NewProductAnnounce>
           <NewProductTitle>
