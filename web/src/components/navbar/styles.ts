@@ -24,6 +24,7 @@ export const Logo = styled.div`
   background: url(${images.logo});
   position: absolute;
   margin: auto;
+  cursor: pointer;
 `;
 
 export const CartButton = styled.div`

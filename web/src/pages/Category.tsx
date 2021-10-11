@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
 import Navbar from "../components/navbar";
@@ -25,7 +25,7 @@ const CategoryName = styled.h1`
 // Page
 const Category = () => {
   const { category } = useParams<{ category: string }>();
-  const productsToDisplay = getProducts(category);
+  const productsToDisplay = useMemo(() => getProducts(category), []);
 
   return (
     <>
