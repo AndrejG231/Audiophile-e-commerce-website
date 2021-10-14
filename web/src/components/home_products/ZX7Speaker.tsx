@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ButtonColor } from "../buttons";
 import images from "../../data/images";
+import { Subscribe } from "unstated";
+import { ScreenQuery } from "../..";
 
 const ProductSpeakerBox = styled.div`
   position: relative;
@@ -13,9 +15,7 @@ const ProductSpeakerBox = styled.div`
   margin-top: 24px;
 `;
 
-const ZX7Image = styled.img.attrs(() => ({
-  src: images.mobile.speakerZX7,
-}))`
+const ZX7Image = styled.img`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -59,7 +59,11 @@ const SeeProductButton = styled(ButtonColor)`
 const ZX7ProductView = () => {
   return (
     <ProductSpeakerBox>
-      <ZX7Image />
+      <Subscribe to={[ScreenQuery]}>
+        {(query: ScreenQuery) => (
+          <ZX7Image src={images.speakerZX7[query.state.mediaQuery]} />
+        )}
+      </Subscribe>
       <ProductSpeakerTitle>ZX7 SPEAKER</ProductSpeakerTitle>
       <SeeProductButton>see product</SeeProductButton>
     </ProductSpeakerBox>

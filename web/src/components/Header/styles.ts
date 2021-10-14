@@ -5,7 +5,7 @@ import { ButtonColor } from "../buttons";
 // Navbar
 export const Container = styled.header`
   background: ${({ theme }) => theme.colors.black};
-  background: url(${images.mobile.header}), black;
+  background: url(${images.header.mobile}), black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -13,7 +13,6 @@ export const Container = styled.header`
   width: 100%;
   overflow: hidden;
 `;
-
 
 export const NewProductArea = styled.div`
   margin: auto;

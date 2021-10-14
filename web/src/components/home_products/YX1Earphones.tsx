@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ButtonColor } from "../buttons";
 import images from "../../data/images";
+import { Subscribe } from "unstated";
+import { ScreenQuery } from "../..";
 
 const ProductContainer = styled.div`
   position: relative;
@@ -13,9 +15,7 @@ const ProductContainer = styled.div`
   margin-top: 24px;
 `;
 
-const ProductImage = styled.img.attrs(() => ({
-  src: images.mobile.earphonesYX1,
-}))`
+const ProductImage = styled.img`
   position: relative;
   width: 100%;
   height: 200px;
@@ -56,7 +56,11 @@ const SeeProductButton = styled(ButtonColor)`
 const YX1Earphones = () => {
   return (
     <ProductContainer>
-      <ProductImage />
+      <Subscribe to={[ScreenQuery]}>
+        {(query: ScreenQuery) => (
+          <ProductImage src={images.earphonesYX1[query.state.mediaQuery]} />
+        )}
+      </Subscribe>
       <ProductInfoBox>
         <ProductSpeakerTitle>YX1 EARPHONES</ProductSpeakerTitle>
         <SeeProductButton>see product</SeeProductButton>

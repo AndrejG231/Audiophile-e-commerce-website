@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ButtonColor } from "../buttons";
 import images from "../../data/images";
+import { Subscribe } from "unstated";
+import { ScreenQuery } from "../..";
 
 const ProductSpeakerBox = styled.div`
   position: relative;
@@ -23,9 +25,7 @@ const CircleBackground = styled.img.attrs(() => ({
   transform: translateX(-50%);
 `;
 
-const ZX9Image = styled.img.attrs(() => ({
-  src: images.mobile.speakerZX9,
-}))`
+const ZX9Image = styled.img`
   position: relative;
   width: 172px;
   display: block;
@@ -73,7 +73,11 @@ const ZX9ProductView = () => {
   return (
     <ProductSpeakerBox>
       <CircleBackground />
-      <ZX9Image />
+      <Subscribe to={[ScreenQuery]}>
+        {(query: ScreenQuery) => (
+          <ZX9Image src={images.speakerZX9[query.state.mediaQuery]} />
+        )}
+      </Subscribe>
       <ProductSpeakerTitle>
         ZX9
         <br />

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Subscribe } from "unstated";
+import { ScreenQuery } from "../..";
 import images from "../../data/images";
 
 const GearContainer = styled.aside`
@@ -11,9 +13,7 @@ const GearContainer = styled.aside`
   padding-bottom: 15px;
 `;
 
-const GearImage = styled.img.attrs(() => ({
-  src: images.mobile.bestGear,
-}))`
+const GearImage = styled.img`
   position: relative;
   width: 100%;
   height: 300px;
@@ -47,7 +47,11 @@ const GearDesc = styled.p`
 const BestGear = () => {
   return (
     <GearContainer>
-      <GearImage />
+      <Subscribe to={[ScreenQuery]}>
+        {(query: ScreenQuery) => (
+          <GearImage src={images.bestGear[query.state.mediaQuery]} />
+        )}
+      </Subscribe>
       <GearTitle>
         Bringing you the <WordHiglight>best</WordHiglight> audio gear
       </GearTitle>

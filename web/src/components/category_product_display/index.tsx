@@ -35,7 +35,7 @@ const CategoryProductDisplay: FC<CategoryProductProps> = ({
       {isNew ? <NewProductNotify>new product</NewProductNotify> : null}
       <ProductName>{name}</ProductName>
       <ProductDesc>{desc}</ProductDesc>
-      <Link to={"/" + link + "/"}>
+      <Link to={link}>
         <SeeProductButton>see product</SeeProductButton>
       </Link>
     </ProductContainer>
