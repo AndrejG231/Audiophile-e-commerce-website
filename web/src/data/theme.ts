@@ -1,3 +1,13 @@
+const sizes = {
+  tablet: 460,
+  desktop: 900,
+};
+
+const query = {
+  tablet: `screen and (min-width: ${sizes.tablet}px)`,
+  desktop: `screen and (min-width: ${sizes.desktop}px)`,
+};
+
 const colors = {
   brown: "#D87D4A",
   lightBrown: "#FBAF85",
@@ -8,11 +18,6 @@ const colors = {
   error: "#CD2C2C",
   grayLine: "#979797",
   white: "#FFF",
-};
-
-// Main layout optimized at min-width: 350px;
-const query = {
-  md: "@media screen and (min-width: 570px)", // tablet
 };
 
 const fonts = {
@@ -98,6 +103,6 @@ const fonts = {
   `,
 };
 
-const theme = { colors, fonts, query };
+const theme = { colors, fonts, query, sizes };
 
 export default theme;

@@ -1,4 +1,6 @@
 import React from "react";
+import { Subscribe } from "unstated";
+import { ScreenQuery } from "..";
 import BestGear from "../components/footer/BestGear";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header";
