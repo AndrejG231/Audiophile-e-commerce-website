@@ -18,12 +18,30 @@ const logos = {
 
 const images = {
   ...logos,
-  mobile: {
-    header: "assets/home/mobile/image-header.jpg",
-    speakerZX9: "assets/home/mobile/image-speaker-zx9.png",
-    speakerZX7: "assets/home/mobile/image-speaker-zx7.jpg",
-    earphonesYX1: "assets/home/mobile/image-earphones-yx1.jpg",
-    bestGear: "assets/shared/mobile/image-best-gear.jpg",
+  header: {
+    mobile: "assets/home/mobile/image-header.jpg",
+    tablet: "assets/home/tablet/image-header.jpg",
+    desktop: "assets/home/desktop/image-header.jpg",
+  },
+  speakerZX9: {
+    mobile: "assets/home/mobile/image-speaker-zx9.png",
+    tablet: "assets/home/table/image-speaker-zx9.png",
+    desktop: "assets/home/desktop/image-speaker-zx9.png",
+  },
+  speakerZX7: {
+    mobile: "assets/home/mobile/image-speaker-zx7.jpg",
+    tablet: "assets/home/tablet/image-speaker-zx7.jpg",
+    desktop: "assets/home/desktop/image-speaker-zx7.jpg",
+  },
+  earphonesYX1: {
+    mobile: "assets/home/mobile/image-earphones-yx1.jpg",
+    tablet: "assets/home/tablet/image-earphones-yx1.jpg",
+    desktop: "assets/home/desktop/image-earphones-yx1.jpg",
+  },
+  bestGear: {
+    mobile: "assets/shared/mobile/image-best-gear.jpg",
+    tablet: "assets/shared/tablet/image-best-gear.jpg",
+    desktop: "assets/shared/desktop/image-best-gear.jpg",
   },
   categoryThumbnail: {
     earphones: "assets/shared/desktop/image-category-thumbnail-earphones.png",
