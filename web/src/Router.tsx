@@ -7,8 +7,8 @@ import Product from "./pages/Product";
 
 export const routes = {
   home: "/",
-  category: (category: string) => `category/${category}`,
-  product: (product: string) => `product/${product}`,
+  category: (category: string) => `/category/${category}`,
+  product: (product: string) => `/product/${product}`,
 };
 
 const Router = () => {
@@ -16,12 +16,12 @@ const Router = () => {
     <BrowserRouter>
       <Route path={routes.home} exact component={() => <Home />} />
       <Route
-        path={`/${routes.category(":category")}`}
+        path={`${routes.category(":category")}`}
         exact
         component={() => <Category />}
       />
       <Route
-        path={`/${routes.product(":product")}`}
+        path={`${routes.product(":product")}`}
         exact
         component={() => <Product />}
       />
