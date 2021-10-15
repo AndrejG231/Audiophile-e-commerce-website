@@ -17,3 +17,6 @@
 node_modules
 audiophile-ecommerce-website
 *.lock
+*.log
+web/cypress/integration/1-getting-started/*
+web/cypress/integration/2-advanced-examples/*
