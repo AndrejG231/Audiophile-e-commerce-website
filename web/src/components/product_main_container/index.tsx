@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { useHistory } from "react-router";
 import { Subscribe } from "unstated";
+import { ProductCounts } from "../../states/ProductCounts";
 import { ScreenQuery } from "../../states/ScreenQuery";
 import { ResponsiveImg } from "../../types/props";
 import {
@@ -24,6 +25,7 @@ type props = {
   isNew: boolean;
   description: string;
   price: number;
+  slug: string;
 };
 
 const ProductMainContainer: FC<props> = ({
@@ -32,6 +34,7 @@ const ProductMainContainer: FC<props> = ({
   isNew,
   description,
   price,
+  slug,
 }) => {
   const nav = useHistory();
 
@@ -46,11 +49,19 @@ const ProductMainContainer: FC<props> = ({
       <Description>{description}</Description>
       <Price>$ {price.toLocaleString("en-US")}</Price>
       <AddToCardContainer>
-        <QuantitySelect>
-          <QuantityChangeSymbol>-</QuantityChangeSymbol>
-          <QuantityNumber>20</QuantityNumber>
-          <QuantityChangeSymbol>+</QuantityChangeSymbol>
-        </QuantitySelect>
+        <Subscribe to={[ProductCounts]}>
+          {(product: ProductCounts) => (
+            <QuantitySelect>
+              <QuantityChangeSymbol onClick={() => product.decrement(slug)}>
+                -
+              </QuantityChangeSymbol>
+              <QuantityNumber>{product.state[slug]}</QuantityNumber>
+              <QuantityChangeSymbol onClick={() => product.increment(slug)}>
+                +
+              </QuantityChangeSymbol>
+            </QuantitySelect>
+          )}
+        </Subscribe>
         <AddToCartButton>Add To Cart</AddToCartButton>
       </AddToCardContainer>
     </Container>

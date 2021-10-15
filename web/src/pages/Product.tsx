@@ -24,6 +24,7 @@ const Product = () => {
     <>
       <Navbar />
       <ProductMainContainer
+        slug={product.slug}
         name={product.name}
         description={product.description}
         img={product.image}
