@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
+import { Subscribe } from "unstated";
+import { ScreenQuery } from "../../states/ScreenQuery";
 
 import {
   NewProductNotify,
@@ -31,7 +33,11 @@ const CategoryProductDisplay: FC<CategoryProductProps> = ({
 }) => {
   return (
     <ProductContainer>
-      <ProductImage img={img} />
+      <Subscribe to={[ScreenQuery]}>
+        {(query: ScreenQuery) => (
+          <ProductImage src={img[query.state.mediaQuery]} />
+        )}
+      </Subscribe>
       {isNew ? <NewProductNotify>new product</NewProductNotify> : null}
       <ProductName>{name}</ProductName>
       <ProductDesc>{desc}</ProductDesc>

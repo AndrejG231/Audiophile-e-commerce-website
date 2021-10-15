@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Subscribe } from "unstated";
-import { ScreenQuery } from "../..";
+import { ScreenQuery } from "../../states/ScreenQuery";
 import images from "../../data/images";
 
 const GearContainer = styled.aside`

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ButtonColor } from "../buttons";
 import images from "../../data/images";
 import { Subscribe } from "unstated";
-import { ScreenQuery } from "../..";
+import { ScreenQuery } from "../../states/ScreenQuery";
 
 const ProductContainer = styled.div`
   position: relative;

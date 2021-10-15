@@ -6,15 +6,12 @@ export const ProductContainer = styled.div`
   position: relative;
 `;
 
-export const ProductImage = styled.div<{
-  img: { mobile: string; tablet: string; desktop: string };
-}>`
-  background: url(${({ img }) => img.mobile});
-  background-position: center;
-  background-size: cover;
+export const ProductImage = styled.img`
+  object-fit: cover;
   border-radius: 8px;
   height: 352px;
   margin-bottom: 32px;
+  width: 100%;
 `;
 
 export const NewProductNotify = styled.span`
