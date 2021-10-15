@@ -1,4 +1,6 @@
 import React from "react";
+import { useHistory } from "react-router";
+import { routes } from "../../Router";
 import {
   Container,
   NewProductArea,
@@ -9,6 +11,8 @@ import {
 } from "./styles";
 
 const Header = () => {
+  const nav = useHistory();
+
   return (
     <Container>
       <NewProductArea>
@@ -21,7 +25,11 @@ const Header = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </NewProductDetail>
-        <SeeProductButton>See product</SeeProductButton>
+        <SeeProductButton
+          onClick={() => nav.push(routes.product("xx99-mark-two-headphones"))}
+        >
+          See product
+        </SeeProductButton>
       </NewProductArea>
     </Container>
   );
