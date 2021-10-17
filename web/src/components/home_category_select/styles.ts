@@ -65,3 +65,7 @@ export const CategoryName = styled.span`
   font-size: 15px;
   color: ${({ theme }) => theme.colors.black};
 `;
+
+export const OuterContainer = styled.div<{ lower?: boolean }>`
+  margin-top: ${({ lower }) => (lower ? 120 : 32)}px;
+`;

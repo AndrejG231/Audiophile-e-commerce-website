@@ -13,6 +13,7 @@ import {
 import Navbar from "../components/navbar";
 import { Spacer } from "../components/util";
 import images from "../data/images";
+import CategorySelection from "../components/home_category_select";
 
 // Main
 const Home = () => {
@@ -21,25 +22,13 @@ const Home = () => {
       <Navbar />
       <Header />
       <main>
-        <Spacer height={32} />
-        <SelectCategory
-          category="headphones"
-          image={images.categoryThumbnail.headphones}
-        />
-        <SelectCategory
-          category="speakers"
-          image={images.categoryThumbnail.speakers}
-        />
-        <SelectCategory
-          category="earphones"
-          image={images.categoryThumbnail.earphones}
-        />
+        <CategorySelection />
         <ZX9ProductView />
         <ZX7ProductView />
         <YX1ProductView />
-        <BestGear />
-        <Footer />
       </main>
+      <BestGear />
+      <Footer />
     </>
   );
 };
