@@ -9,6 +9,9 @@ import ProductGallery from "../components/product_gallery";
 import { CommonProductsTitle } from "../components/product_common/styles";
 import ProductCommon from "../components/product_common";
 import SelectCategory from "../components/home_category_select";
+import CategorySelection from "../components/home_category_select";
+import BestGear from "../components/footer/BestGear";
+import Footer from "../components/footer/Footer";
 
 const resovleProduct = (productKey: string) => {
   return products.find((product) => {
@@ -28,17 +31,19 @@ const Product = () => {
   return (
     <>
       <Navbar />
-      <ProductMainContainer
-        slug={product.slug}
-        name={product.name}
-        description={product.description}
-        img={product.image}
-        isNew={product.new}
-        price={product.price}
-      />
-      <ProductFeatures features={product.features} />
-      <ProductInBox contents={product.includes} />
-      <ProductGallery images={product.gallery} />
+      <main>
+        <ProductMainContainer
+          slug={product.slug}
+          name={product.name}
+          description={product.description}
+          img={product.image}
+          isNew={product.new}
+          price={product.price}
+        />
+        <ProductFeatures features={product.features} />
+        <ProductInBox contents={product.includes} />
+        <ProductGallery images={product.gallery} />
+      </main>
       <CommonProductsTitle>You may also like</CommonProductsTitle>
       {product.others.map((other) => (
         <ProductCommon
@@ -47,6 +52,9 @@ const Product = () => {
           slug={other.slug}
         ></ProductCommon>
       ))}
+      <CategorySelection lower />
+      <BestGear />
+      <Footer />
     </>
   );
 };
