@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import { useHistory, useParams } from "react-router";
 import products from "../data/products";
 import ProductMainContainer from "../components/product_main_container";
+import ProductInBox from "../components/product_in_box";
 
 const resovleProduct = (productKey: string) => {
   return products.find((product) => {
@@ -31,6 +32,7 @@ const Product = () => {
         isNew={product.new}
         price={product.price}
       />
+      <ProductInBox contents={product.includes} />
     </>
   );
 };
