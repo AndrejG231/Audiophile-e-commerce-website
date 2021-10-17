@@ -5,6 +5,7 @@ import products from "../data/products";
 import ProductMainContainer from "../components/product_main_container";
 import ProductInBox from "../components/product_in_box";
 import ProductFeatures from "../components/product_features";
+import ProductGallery from "../components/product_gallery";
 
 const resovleProduct = (productKey: string) => {
   return products.find((product) => {
@@ -15,7 +16,6 @@ const resovleProduct = (productKey: string) => {
 const Product = () => {
   const { product: productKey } = useParams<{ product: string }>();
   const product = useMemo(() => resovleProduct(productKey), []);
-  const nav = useHistory();
 
   //   Temporary no product found handling
   if (!product) {
@@ -35,6 +35,7 @@ const Product = () => {
       />
       <ProductFeatures features={product.features} />
       <ProductInBox contents={product.includes} />
+      <ProductGallery images={product.gallery} />
     </>
   );
 };
