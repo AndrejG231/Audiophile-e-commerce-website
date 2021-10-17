@@ -6,6 +6,9 @@ import ProductMainContainer from "../components/product_main_container";
 import ProductInBox from "../components/product_in_box";
 import ProductFeatures from "../components/product_features";
 import ProductGallery from "../components/product_gallery";
+import { CommonProductsTitle } from "../components/product_common/styles";
+import ProductCommon from "../components/product_common";
+import SelectCategory from "../components/home_category_select";
 
 const resovleProduct = (productKey: string) => {
   return products.find((product) => {
@@ -36,6 +39,14 @@ const Product = () => {
       <ProductFeatures features={product.features} />
       <ProductInBox contents={product.includes} />
       <ProductGallery images={product.gallery} />
+      <CommonProductsTitle>You may also like</CommonProductsTitle>
+      {product.others.map((other) => (
+        <ProductCommon
+          image={other.image}
+          name={other.name}
+          slug={other.slug}
+        ></ProductCommon>
+      ))}
     </>
   );
 };
