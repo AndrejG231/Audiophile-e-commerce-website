@@ -3,10 +3,10 @@ import products from "../data/products";
 
 type cartCounts = { [key in typeof products[number]["slug"]]: number };
 
-const defaultState: cartCounts = products.reduce(
+const defaultState: cartCounts = Object.keys(products).reduce(
   (acc: cartCounts, product) => ({
     ...acc,
-    [product.slug]: 1,
+    [product]: 1,
   }),
   {}
 );

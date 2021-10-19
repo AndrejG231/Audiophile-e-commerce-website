@@ -2,9 +2,9 @@ import products from "../data/products";
 
 // Returns list of products for specified category
 const getProducts = (category: string) => {
-  const productsToDisplay: typeof products = [];
+  const productsToDisplay: typeof products[string][] = [];
 
-  products.forEach((item) => {
+  Object.values(products).forEach((item) => {
     // Map over all the products data
     if (item.category !== category) {
       return;

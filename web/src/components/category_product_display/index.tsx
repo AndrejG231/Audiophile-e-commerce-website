@@ -1,6 +1,7 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Subscribe } from "unstated";
+import { routes } from "../../Router";
 import { ScreenQuery } from "../../states/ScreenQuery";
 
 import {
@@ -31,6 +32,7 @@ const CategoryProductDisplay: FC<CategoryProductProps> = ({
   desc,
   link,
 }) => {
+  const nav = useHistory();
   return (
     <ProductContainer>
       <Subscribe to={[ScreenQuery]}>
@@ -41,9 +43,9 @@ const CategoryProductDisplay: FC<CategoryProductProps> = ({
       {isNew ? <NewProductNotify>new product</NewProductNotify> : null}
       <ProductName>{name}</ProductName>
       <ProductDesc>{desc}</ProductDesc>
-      <Link to={link}>
-        <SeeProductButton>see product</SeeProductButton>
-      </Link>
+      <SeeProductButton onClick={() => nav.push(link)}>
+        see product
+      </SeeProductButton>
     </ProductContainer>
   );
 };

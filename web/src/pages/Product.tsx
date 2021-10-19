@@ -13,15 +13,9 @@ import CategorySelection from "../components/home_category_select";
 import BestGear from "../components/footer/BestGear";
 import Footer from "../components/footer/Footer";
 
-const resovleProduct = (productKey: string) => {
-  return products.find((product) => {
-    return product.slug === productKey;
-  });
-};
-
 const Product = () => {
   const { product: productKey } = useParams<{ product: string }>();
-  const product = useMemo(() => resovleProduct(productKey), []);
+  const product = products[productKey];
 
   //   Temporary no product found handling
   if (!product) {

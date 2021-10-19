@@ -72,5 +72,5 @@ export const NavCover = styled.div<{ cover: boolean }>`
   position: absolute;
   top: 0px;
   bottom: 0px;
-  z-index: 10;
+  z-index: ${({ cover }) => (cover ? "10" : "0")};
 `;

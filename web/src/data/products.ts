@@ -610,4 +610,15 @@ const applyPrefix = (sources: any) => {
   return sources as typeof products;
 };
 
-export default applyPrefix(products);
+const toObject = (items: typeof products) => {
+  const newProducts: { [key in string]: typeof products[number] } = {};
+
+  // Use slug as object keys
+  items.forEach((item) => {
+    newProducts[item.slug] = item;
+  });
+
+  return newProducts;
+};
+
+export default toObject(applyPrefix(products));
