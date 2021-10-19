@@ -1,7 +1,9 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { Subscribe } from "unstated";
 import images from "../../data/images";
 import { routes } from "../../Router";
+import DisplayStates from "../../states/DisplayStates";
 import {
   Box,
   InboxOverlay,
@@ -16,17 +18,25 @@ import {
 type SelectCategoryProps = { category: string; image: string };
 
 const SelectCategory: FC<SelectCategoryProps> = ({ image, category }) => {
+  const nav = useHistory();
   return (
     <Box>
       <InboxOverlay />
       <ImagePlaceholder src={image} />
       <CategoryName>{category}</CategoryName>
-      <Link to={routes.category(category)}>
-        <ArrowButtonContainer>
-          <ArrowText>Shop</ArrowText>
-          <Arrow />
-        </ArrowButtonContainer>
-      </Link>
+      <Subscribe to={[DisplayStates]}>
+        {(states: DisplayStates) => (
+          <ArrowButtonContainer
+            onClick={() => {
+              states.closeAll();
+              nav.push(routes.category(category));
+            }}
+          >
+            <ArrowText>Shop</ArrowText>
+            <Arrow />
+          </ArrowButtonContainer>
+        )}
+      </Subscribe>
     </Box>
   );
 };

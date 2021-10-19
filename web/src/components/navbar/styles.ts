@@ -43,10 +43,34 @@ export const NavbarContainer = styled.div`
   height: 88px;
   padding-top: 32.5px;
   background: ${({ theme }) => theme.colors.black};
+  z-index: 11;
+  position: relative;
 `;
 
 export const NavUnderline = styled.div`
   width: 100%;
   height: 1px;
   background: ${({ theme }) => theme.colors.grayLine};
+`;
+
+export const NavContainer = styled.div`
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: ${({ theme }) => theme.colors.white};
+  padding-top: 32px;
+  padding-bottom: 35px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+`;
+
+export const NavCover = styled.div<{ cover: boolean }>`
+  width: 100%;
+  background: ${({ cover }) => (cover ? "rgba(0, 0, 0, 0.5)" : "transparent")};
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 10;
 `;
