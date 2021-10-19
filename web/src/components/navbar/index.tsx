@@ -54,7 +54,12 @@ const Navbar = () => {
 export const NavbarCover = () => {
   return (
     <Subscribe to={[DisplayStates]}>
-      {(display: DisplayStates) => <NavCover cover={display.state.navbar} />}
+      {(display: DisplayStates) => (
+        <NavCover
+          cover={display.state.navbar || display.state.shoppingCart}
+          onClick={display.closeAll}
+        />
+      )}
     </Subscribe>
   );
 };

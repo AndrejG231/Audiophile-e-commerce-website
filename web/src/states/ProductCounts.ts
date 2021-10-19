@@ -14,10 +14,13 @@ const defaultState: cartCounts = Object.keys(products).reduce(
 export class ProductCounts extends Container<cartCounts> {
   // Stores selected number of products in memory
   state = defaultState;
-  increment = async (productSlug: keyof cartCounts) => {
+  increment = (productSlug: keyof cartCounts) => {
     this.setState((state) => ({ [productSlug]: state[productSlug] + 1 }));
   };
-  decrement = async (productSlug: keyof cartCounts) => {
-    await this.setState((state) => ({ [productSlug]: state[productSlug] - 1 }));
+  decrement = (productSlug: keyof cartCounts) => {
+    this.setState((state) => ({ [productSlug]: state[productSlug] - 1 }));
+  };
+  reset = (item: keyof cartCounts) => {
+    this.setState({ [item]: 1 });
   };
 }

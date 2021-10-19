@@ -8,14 +8,17 @@ type state = {
   };
 };
 
-class Card extends Container<state> {
+class Cart extends Container<state> {
   state = { cart: {} };
   addItem = (item: string, quantity: number) => {
     this.setState((state) => ({
       cart: {
         ...state.cart,
         [item]: {
-          quantity,
+          quantity:
+            state.cart[item] && state.cart[item].quantity > 0
+              ? state.cart[item].quantity + quantity
+              : quantity,
         },
       },
     }));
@@ -48,11 +51,13 @@ class Card extends Container<state> {
         ...state.cart,
         [item]: {
           quantity:
-            state.cart[item].quantity - 1 > 0 ? state.cart[item].quantity : 0,
+            state.cart[item].quantity - 1 > 0
+              ? state.cart[item].quantity - 1
+              : 0,
         },
       },
     }));
   };
 }
 
-export default Card;
+export default Cart;

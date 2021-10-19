@@ -3,6 +3,7 @@ import { Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components";
 import { NavbarCover } from "./components/navbar/";
+import ShoppingCart from "./components/shopping_cart";
 import Category from "./pages/Category";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
@@ -22,6 +23,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Container>
+        <ShoppingCart />
         <NavbarCover />
         <Route path={routes.home} exact component={() => <Home />} />
         <Route
