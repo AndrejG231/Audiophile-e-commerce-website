@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import images from "../../data/images";
 import React from "react";
+import { useHistory } from "react-router";
+import { routes } from "../../Router";
 
 const Box = styled.div`
   position: relative;
@@ -87,15 +89,22 @@ const SocialIcon = styled.img`
 `;
 
 const Footer = () => {
+  const nav = useHistory();
   return (
     <Box>
       <TopLine />
       <Logo />
       <NavContainer>
-        <NavItem>home</NavItem>
-        <NavItem>headphones</NavItem>
-        <NavItem>speakers</NavItem>
-        <NavItem>earphones</NavItem>
+        <NavItem onClick={() => nav.push(routes.home)}>home</NavItem>
+        <NavItem onClick={() => nav.push(routes.category("headphones"))}>
+          headphones
+        </NavItem>
+        <NavItem onClick={() => nav.push(routes.category("speakers"))}>
+          speakers
+        </NavItem>
+        <NavItem onClick={() => nav.push(routes.category("earphones"))}>
+          earphones
+        </NavItem>
       </NavContainer>
       <AudiophileDesc>
         Audiophile is an all in one stop to fulfill your audio needs. We're a
