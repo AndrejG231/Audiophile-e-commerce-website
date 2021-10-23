@@ -8,10 +8,10 @@ export const Bar = styled.nav`
 `;
 
 export const NavButton = styled.div`
+  position: absolute;
   width: 16px;
   height: 14.7px;
   background: url(${images.hamburgerIcon});
-  position: absolute;
   margin: auto;
   margin-right: auto;
   margin-left: 24px;
@@ -22,20 +22,22 @@ export const Logo = styled.div`
   width: 143px;
   height: 24.5px;
   background: url(${images.logo});
-  position: absolute;
-  margin: auto;
   cursor: pointer;
+  position: absolute;
+  margin-left: 50%;
+  transform: translateX(-50%);
 `;
 
 export const CartButton = styled.div`
   width: 24px;
   height: 19.6px;
-  background: url(${images.cartIcon});
-  position: absolute;
+  background: url(${images.cartIcon}) no-repeat;
   margin: auto;
-  margin-right: 24px;
-  margin-left: auto;
+  padding-right: 24px;
+  margin-left: 100%;
+  transform: translateX(-100%) translate(-24px, 0);
   cursor: pointer;
+  position: absolute;
 `;
 
 export const NavbarContainer = styled.div`
