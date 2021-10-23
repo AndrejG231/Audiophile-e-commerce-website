@@ -7,6 +7,7 @@ import ShoppingCart from "./components/shopping_cart";
 import Category from "./pages/Category";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
+import ScrollTop from "./util/routerScrollTop";
 
 const Container = styled.div`
   width: 100%;
@@ -22,6 +23,7 @@ export const routes = {
 const Router = () => {
   return (
     <BrowserRouter>
+      <ScrollTop />
       <Container>
         <ShoppingCart />
         <NavbarCover />

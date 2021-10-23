@@ -25,7 +25,7 @@ const CategoryName = styled.h1`
 // Page
 const Category = () => {
   const { category } = useParams<{ category: string }>();
-  const productsToDisplay = useMemo(() => getProducts(category), []);
+  const productsToDisplay = useMemo(() => getProducts(category), [category]);
 
   return (
     <>
