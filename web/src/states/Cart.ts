@@ -58,6 +58,10 @@ class Cart extends Container<state> {
       },
     }));
   };
+
+  removeAll = () => {
+    this.setState({ cart: {} });
+  };
 }
 
 export default Cart;
