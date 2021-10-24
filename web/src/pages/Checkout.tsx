@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CheckoutForm from "../components/checkout_form";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar";
 import { BackButton } from "../components/product_main_container/styles";
@@ -20,7 +21,7 @@ const Checkout = () => {
       <Navbar />
       <PaddingBox>
         <GoBack>Go back</GoBack>
-        {/* Checkout form */}
+        <CheckoutForm />
         {/* Summarry */}
       </PaddingBox>
       <Footer />
