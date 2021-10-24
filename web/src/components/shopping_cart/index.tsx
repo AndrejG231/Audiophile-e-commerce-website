@@ -1,8 +1,10 @@
 import React from "react";
 import { Subscribe } from "unstated";
 import products from "../../data/products";
+import { routes } from "../../Router";
 import Cart from "../../states/Cart";
 import DisplayStates from "../../states/DisplayStates";
+import { useHistory } from "react-router";
 import { ScreenQuery } from "../../states/ScreenQuery";
 import {
   CartContainer,
@@ -24,6 +26,8 @@ import {
 } from "./styles";
 
 const ShoppingCart = () => {
+  const nav = useHistory();
+
   return (
     <Subscribe to={[Cart, DisplayStates]}>
       {(cart: Cart, display: DisplayStates) => {
@@ -92,7 +96,14 @@ const ShoppingCart = () => {
               <CartTotalText>Total</CartTotalText>
               <CartSum>${cartValues.total.toLocaleString("US-en")}</CartSum>
             </CartTotal>
-            <CheckoutButton>Checkout</CheckoutButton>
+            <CheckoutButton
+              onClick={() => {
+                display.closeAll();
+                nav.push(routes.checkout);
+              }}
+            >
+              Checkout
+            </CheckoutButton>
           </CartContainer>
         );
       }}

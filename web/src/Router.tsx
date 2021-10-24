@@ -7,17 +7,20 @@ import ShoppingCart from "./components/shopping_cart";
 import Category from "./pages/Category";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
+import Checkout from "./pages/Checkout";
 import ScrollTop from "./util/routerScrollTop";
 
 const Container = styled.div`
   width: 100%;
   position: relative;
+  background: ${({ theme }) => theme.colors.lightGray};
 `;
 
 export const routes = {
   home: "/",
   category: (category: string) => `/category/${category}`,
   product: (product: string) => `/product/${product}`,
+  checkout: "/checkout",
 };
 
 const Router = () => {
@@ -38,6 +41,7 @@ const Router = () => {
           exact
           component={() => <Product />}
         />
+        <Route path={routes.checkout} exact component={() => <Checkout />} />
       </Container>
     </BrowserRouter>
   );
