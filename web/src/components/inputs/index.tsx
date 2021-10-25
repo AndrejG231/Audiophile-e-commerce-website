@@ -69,12 +69,14 @@ type props = {
   identifier: string;
   label?: string;
   placeholder?: string;
+  type?: "text" | "number" | "password";
 };
 
 export const InputField: FC<props> = ({
   identifier,
   label = identifier,
   placeholder = label,
+  type = "text",
 }) => {
   return (
     <Subscribe to={[Checkout]}>
@@ -94,6 +96,7 @@ export const InputField: FC<props> = ({
             </InputLabel>
             <InputError>{error}</InputError>
             <InputArea
+              type={type}
               isErr={!!error}
               onBlur={() => {
                 checkoutInputCheck(identifier, value, (error) =>
@@ -106,7 +109,6 @@ export const InputField: FC<props> = ({
               value={value}
               name={identifier}
               placeholder={placeholder}
-              type="text"
             />
           </InputContainer>
         );
