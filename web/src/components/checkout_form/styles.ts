@@ -25,3 +25,19 @@ export const Legend = styled.legend`
   ${({ theme }) => theme.fonts.subtitle};
   margin-bottom: 16px;
 `;
+
+export const InputLabel = styled.label`
+  display: block;
+  ${({ theme }) => theme.fonts.manrope};
+  font-size: 0.75rem;
+  margin-bottom: 1px;
+  font-weight: 700;
+`;
+
+export const RadioContainer = styled.div`
+  margin-top: 16px;
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  padding-left: 24px;
+`;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import CheckoutForm from "../components/checkout_form";
 import Footer from "../components/footer/Footer";
@@ -16,12 +16,13 @@ const PaddingBox = styled.div`
 `;
 
 const Checkout = () => {
+  const [word, setWord] = useState(0);
   return (
     <>
       <Navbar />
       <PaddingBox>
-        <GoBack>Go back</GoBack>
-        <CheckoutForm />
+        <GoBack onClick={() => setWord(word + 1)}>Go back</GoBack>
+        <CheckoutForm word={word} />
         {/* Summarry */}
       </PaddingBox>
       <Footer />
