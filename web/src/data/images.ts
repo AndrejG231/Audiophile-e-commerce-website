@@ -1,4 +1,4 @@
-const _SERVER = "http://localhost:3000/";
+const _SERVER = "http://192.168.100.146:3000/";
 
 // default type of image source tree
 type ImgSrcTree = {
