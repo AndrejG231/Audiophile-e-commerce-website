@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useMemo, useState } from "react";
 import styled, { ThemeConsumer } from "styled-components";
 import { Subscribe } from "unstated";
 import Checkout from "../../states/Checkout";
@@ -42,16 +42,16 @@ const InputArea = styled.input<inputProps>`
   ${({ theme, isErr }) => {
     if (isErr) {
       return `
-        border: 2px solid ${theme.colors.error};
+        border: 1px solid ${theme.colors.error};
         &:hover {
-            border: 2px solid ${theme.colors.error};
+            border: 1px solid ${theme.colors.error};
         }
         &:focus {
-            border: 2px solid ${theme.colors.error};
+            border: 1px solid ${theme.colors.error};
         }
         `;
     }
-    return `border: 2px solid ${theme.colors.grayLine};`;
+    return `border: 1px solid ${theme.colors.grayLine};`;
   }}
 `;
 
@@ -111,6 +111,102 @@ export const InputField: FC<props> = ({
               placeholder={placeholder}
             />
           </InputContainer>
+        );
+      }}
+    </Subscribe>
+  );
+};
+
+// Select Input
+const SelectContainer = styled.div<{ margin: boolean; selected: boolean }>`
+  width: 100%;
+  margin-top: 9px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 8px;
+  padding-left: 16px;
+  margin-top: 16px;
+  margin-bottom: ${({ margin }) => (margin ? 32 : 0)}px;
+  position: relative;
+  ${({ theme, selected }) =>
+    selected
+      ? `border: 1px solid ${theme.colors.brown}`
+      : `border: 1px solid ${theme.colors.grayLine};`}
+`;
+
+const SelectBox = styled.div`
+  border: 1px solid ${({ theme }) => theme.colors.grayLine};
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 999px;
+`;
+
+const Selector = styled.input.attrs(() => ({ type: "radio" }))`
+  cursor: pointer;
+  border-radius: 999px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 5;
+  opacity: 0;
+`;
+
+const SelectView = styled.div<{ selected: boolean }>`
+  border-radius: 999px;
+  width: 10px;
+  height: 10px;
+  border: none;
+  background: ${({ selected, theme }) => (selected ? theme.colors.brown : "")};
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+`;
+
+const SelectLabel = styled.label`
+  ${({ theme }) => theme.fonts.manrope};
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin-left: 36px;
+`;
+
+const selectGroup = "formPaymentMethod";
+
+export const SelectField: FC<{
+  identifier: string;
+  label?: string;
+  margin?: boolean;
+}> = ({ identifier, label = identifier, margin = false }) => {
+  return (
+    <Subscribe to={[Checkout]}>
+      {(checkout: Checkout) => {
+        const payMethod = checkout.state.boolInputs[selectGroup];
+
+        return (
+          <SelectContainer
+            margin={margin}
+            onClick={() => checkout.select(selectGroup, identifier)}
+            selected={payMethod === identifier}
+          >
+            <SelectBox>
+              <Selector name={identifier} checked={payMethod === identifier} />
+              <SelectView selected={payMethod === identifier} />
+            </SelectBox>
+            <SelectLabel htmlFor={identifier}>{label}</SelectLabel>
+          </SelectContainer>
         );
       }}
     </Subscribe>
