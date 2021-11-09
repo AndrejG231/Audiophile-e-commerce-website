@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
-  padding: 24px 24px 32px 24px;
+  padding: 24px 24px 0px 24px;
 `;
 
 export const CheckoutTitle = styled.h1`
