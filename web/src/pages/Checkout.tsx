@@ -16,13 +16,12 @@ const PaddingBox = styled.div`
 `;
 
 const Checkout = () => {
-  const [word, setWord] = useState(0);
   return (
     <>
       <Navbar />
       <PaddingBox>
-        <GoBack onClick={() => setWord(word + 1)}>Go back</GoBack>
-        <CheckoutForm word={word} />
+        <GoBack>Go back</GoBack>
+        <CheckoutForm />
         {/* Summarry */}
       </PaddingBox>
       <Footer />
