@@ -7,10 +7,14 @@ type props = {
       error: string;
     };
   };
+  boolInputs: {
+    [key in string]: string;
+    // (key refers to group of inputs), value - string refers to identifier of input
+  };
 };
 
 class Checkout extends Container<props> {
-  state = { textInputs: {} };
+  state = { textInputs: {}, boolInputs: { formPaymentMethod: "select-money" } };
 
   setValue = (id: string, value: string) =>
     this.setState((state) => ({
@@ -33,6 +37,15 @@ class Checkout extends Container<props> {
         },
       },
     }));
+
+  select = (group: string, identifier: string) => {
+    this.setState((state) => ({
+      boolInputs: {
+        ...state.boolInputs,
+        [group]: identifier,
+      },
+    }));
+  };
 }
 
 export default Checkout;
