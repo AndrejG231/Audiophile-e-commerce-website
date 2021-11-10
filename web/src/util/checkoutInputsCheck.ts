@@ -2,22 +2,31 @@ const mailRegex =
   /([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|"([]!#-[^-~ \t]|(\\[\t -~]))+")@[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?(\.[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?)+/;
 
 // Some default error checker functions
-const checkWordCount = (value: string, min: number, max = min) => {
-  const length = value.split(" ").length;
-  if (length < min || length > max) {
-    return "Invalid format.";
-  }
-  return null;
-};
+const checkWordCount =
+  (min: number, max = min) =>
+  (value: string) => {
+    const length = value.split(" ").length;
+    if (length < min || length > max) {
+      return "Invalid format.";
+    }
+    return null;
+  };
 
-const checkLength = (value: string) => {
-  if (value.length < 5) {
-    return "Min. length is 5!";
-  }
-  return null;
-};
+const checkLength =
+  (min: number, max = 99) =>
+  (value: string) => {
+    value = value.replace(/\s+/gi, "");
+    console.log(value.length);
+    if (value.length < min) {
+      return `Min. length is ${min}!`;
+    }
+    if (value.length > max) {
+      return `Max. length is ${max}!`;
+    }
+    return null;
+  };
 
-const checkPhoneNumber = (value: string) => {
+const checkPhoneNumber = () => (value: string) => {
   if (
     !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/.test(
       value
@@ -28,14 +37,15 @@ const checkPhoneNumber = (value: string) => {
   return null;
 };
 
-const checkEmail = (value: string) => {
+const checkEmail = () => (value: string) => {
   if (!mailRegex.test(value)) {
     return "Invalid format.";
   }
   return null;
 };
 
-const checkDigits = (value: string) => {
+const checkDigits = () => (value: string) => {
+  value = value.replace(/\s+/gi, "");
   if (!/^\+?\d+$/.test(value)) {
     return "Digits only!";
   }
@@ -58,31 +68,32 @@ const checkoutInputCheck = (
 
   switch (identifier) {
     case "fullname":
-      tests.push(checkLength);
-      tests.push((value: string) => checkWordCount(value, 2, 4));
+      tests.push(checkLength(5));
+      tests.push(checkWordCount(2, 4));
       break;
     case "phone":
-      tests.push(checkLength);
-      tests.push(checkDigits);
-      tests.push(checkPhoneNumber);
+      tests.push(checkLength(5));
+      tests.push(checkDigits());
+      tests.push(checkPhoneNumber());
       break;
     case "email":
-      tests.push(checkLength);
-      tests.push(checkEmail);
+      tests.push(checkLength(5));
+      tests.push(checkEmail());
       break;
     case "zip":
-      tests.push(checkLength);
-      tests.push(checkDigits);
+      tests.push(checkLength(5, 5));
+      tests.push(checkDigits());
       break;
     case "emoney":
-      tests.push(checkLength);
-      tests.push(checkDigits);
+      tests.push(checkLength(8, 8));
+      tests.push(checkDigits());
       break;
     case "emoney-pin":
-      tests.push(checkDigits);
+      tests.push(checkLength(4, 8));
+      tests.push(checkDigits());
       break;
     default:
-      tests.push(checkLength);
+      tests.push(checkLength(5));
   }
 
   //   Loop through selected tests and return first that does not pass
@@ -92,6 +103,8 @@ const checkoutInputCheck = (
       return setError(result);
     }
   }
+
+  return setError(""); // Clear all previous errors
 };
 
 export default checkoutInputCheck;
