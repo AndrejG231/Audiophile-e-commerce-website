@@ -202,7 +202,11 @@ export const SelectField: FC<{
             selected={payMethod === identifier}
           >
             <SelectBox>
-              <Selector name={identifier} checked={payMethod === identifier} />
+              <Selector
+                name={identifier}
+                checked={payMethod === identifier}
+                onChange={() => null}
+              />
               <SelectView selected={payMethod === identifier} />
             </SelectBox>
             <SelectLabel htmlFor={identifier}>{label}</SelectLabel>
