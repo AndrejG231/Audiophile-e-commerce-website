@@ -1,4 +1,4 @@
-const _SERVER = "http://192.168.100.146:3000/";
+import { _SERVER } from "../constants";
 
 // default type of image source tree
 type ImgSrcTree = {

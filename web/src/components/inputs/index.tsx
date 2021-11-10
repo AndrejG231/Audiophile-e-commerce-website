@@ -1,6 +1,7 @@
-import React, { FC, useMemo, useState } from "react";
-import styled, { ThemeConsumer } from "styled-components";
+import React, { FC } from "react";
+import styled from "styled-components";
 import { Subscribe } from "unstated";
+import { inputGroups } from "../../constants";
 import Checkout from "../../states/Checkout";
 import checkoutInputCheck from "../../util/checkoutInputsCheck";
 
@@ -183,8 +184,6 @@ const SelectLabel = styled.label`
   margin-left: 36px;
 `;
 
-const selectGroup = "formPaymentMethod";
-
 export const SelectField: FC<{
   identifier: string;
   label?: string;
@@ -193,12 +192,12 @@ export const SelectField: FC<{
   return (
     <Subscribe to={[Checkout]}>
       {(checkout: Checkout) => {
-        const payMethod = checkout.state.boolInputs[selectGroup];
+        const payMethod = checkout.state.boolInputs[inputGroups.payMethod];
 
         return (
           <SelectContainer
             margin={margin}
-            onClick={() => checkout.select(selectGroup, identifier)}
+            onClick={() => checkout.select(inputGroups.payMethod, identifier)}
             selected={payMethod === identifier}
           >
             <SelectBox>
