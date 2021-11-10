@@ -45,3 +45,39 @@ export const ProductCount = styled(ProductPrice)`
   text-align: right;
   margin-top: 7px;
 `;
+
+export const PriceLine = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+`;
+
+export const Prices = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 32px;
+  width: 100%;
+  gap: 8px;
+`;
+
+export const GrandTotal = styled(PriceLine)`
+  margin-top: 24px;
+`;
+
+export const PriceName = styled.span`
+  display: block;
+  ${({ theme }) => theme.fonts.body};
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.grayLine};
+`;
+
+export const PriceNum = styled.span<{ grand?: boolean }>`
+  ${({ theme }) => theme.fonts.h6}
+  text-align: right;
+  display: block;
+  font-weight: 700;
+  color: ${({ theme, grand }) =>
+    grand ? theme.colors.brown : theme.colors.black};
+`;

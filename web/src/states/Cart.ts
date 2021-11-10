@@ -1,4 +1,5 @@
 import { Container } from "unstated";
+import products from "../data/products";
 
 type state = {
   cart: {
@@ -61,6 +62,22 @@ class Cart extends Container<state> {
 
   removeAll = () => {
     this.setState({ cart: {} });
+  };
+
+  getPrices = () => {
+    let total = 0;
+
+    Object.entries(this.state.cart).forEach(
+      ([key, value]: [string, { quantity: number }]) => {
+        total = total + products[key].price * value.quantity;
+      }
+    );
+
+    return [
+      { key: "total", val: total },
+      { key: "shipping", val: 50 },
+      { key: "vat", val: ~~(total * 0.2).toFixed(2) },
+    ];
   };
 }
 
