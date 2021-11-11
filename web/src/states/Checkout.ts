@@ -67,13 +67,19 @@ class Checkout extends Container<props> {
 
     // Check all the input data for errors - save new errors outside of state
     for (const key of Object.keys(this.state.textInputs)) {
-      checkoutInputChceck(key, this.state.textInputs[key], (error: string) => {
-        newInputData[key] = { value: this.state.textInputs[key].value, error };
-      });
+      newInputData[key] = {
+        value: this.state.textInputs[key].value,
+        error: "",
+      };
+      checkoutInputChceck(
+        key,
+        this.state.textInputs[key].value,
+        (error: string) => {
+          newInputData[key].error = error;
+        }
+      );
       // Insted of setting error to state, modify newInputData object
     }
-
-    console.log(newInputData);
 
     for (const key of Object.keys(newInputData)) {
       if (newInputData[key].error) {
