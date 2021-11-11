@@ -1,7 +1,9 @@
 import React from "react";
+import { useHistory } from "react-router";
 import { Subscribe } from "unstated";
 import products from "../../data/products";
 import ShoppingCart from "../../states/Cart";
+import Checkout from "../../states/Checkout";
 import { ScreenQuery } from "../../states/ScreenQuery";
 import {
   Container,
@@ -18,9 +20,11 @@ import {
   PriceName,
   PriceNum,
   GrandTotal,
+  ContinueButton,
 } from "./styles";
 
 const CheckoutSummary = () => {
+  const nav = useHistory();
   return (
     <Subscribe to={[ShoppingCart]}>
       {(cart: ShoppingCart) => {
@@ -76,6 +80,13 @@ const CheckoutSummary = () => {
                 )}
               </PriceNum>
             </GrandTotal>
+            <Subscribe to={[Checkout]}>
+              {(checkout: Checkout) => (
+                <ContinueButton onClick={() => checkout.checkAll(nav.push)}>
+                  Continue & Pay
+                </ContinueButton>
+              )}
+            </Subscribe>
           </Container>
         );
       }}

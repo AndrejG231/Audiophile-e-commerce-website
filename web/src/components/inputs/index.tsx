@@ -97,6 +97,7 @@ export const InputField: FC<props> = ({
             </InputLabel>
             <InputError>{error}</InputError>
             <InputArea
+              id={identifier + "-input"}
               type={type}
               isErr={!!error}
               onBlur={() => {

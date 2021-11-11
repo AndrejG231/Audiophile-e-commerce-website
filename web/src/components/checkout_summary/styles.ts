@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ButtonColor } from "../buttons";
 
 import { ProductPrice as Price } from "../shopping_cart/styles";
 
@@ -80,4 +81,13 @@ export const PriceNum = styled.span<{ grand?: boolean }>`
   font-weight: 700;
   color: ${({ theme, grand }) =>
     grand ? theme.colors.brown : theme.colors.black};
+`;
+
+export const ContinueButton = styled(ButtonColor)`
+  width: 100%;
+  background: ${({ theme }) => theme.colors.brown};
+  margin-top: 32px;
+  &:hover {
+    background: ${({ theme }) => theme.colors.lightBrown};
+  }
 `;

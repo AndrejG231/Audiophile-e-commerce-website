@@ -1,7 +1,6 @@
 import React from "react";
 import { Subscribe } from "unstated";
 import Checkout from "../../states/Checkout";
-import { checkoutId } from "../../constants";
 import { InputField, SelectField } from "../inputs";
 import {
   CheckoutTitle,
@@ -16,7 +15,6 @@ const CheckoutForm = () => {
     <Container>
       <CheckoutTitle>Checkout</CheckoutTitle>
       <form
-        id={checkoutId}
         onSubmit={(event) => {
           event.preventDefault();
         }}
