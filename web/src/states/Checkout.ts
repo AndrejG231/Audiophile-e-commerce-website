@@ -1,4 +1,7 @@
 import { Container } from "unstated";
+import { inputIdentifiers } from "../constants";
+import { routes } from "../Router";
+import checkoutInputChceck from "../util/checkoutInputsCheck";
 
 type props = {
   textInputs: {
@@ -14,8 +17,18 @@ type props = {
   };
 };
 
+const defaultTextInputs = inputIdentifiers.reduce(
+  (acc, val) => ({ ...acc, [val]: { error: "", value: "" } }),
+  {}
+);
+
+console.log(defaultTextInputs);
+
 class Checkout extends Container<props> {
-  state = { textInputs: {}, boolInputs: { formPaymentMethod: "select-money" } };
+  state = {
+    textInputs: defaultTextInputs,
+    boolInputs: { formPaymentMethod: "select-money" },
+  };
 
   setValue = (id: string, value: string) =>
     this.setState((state) => ({
@@ -46,6 +59,40 @@ class Checkout extends Container<props> {
         [group]: identifier,
       },
     }));
+  };
+
+  checkAll = (navigator: (path: string) => void) => {
+    const newInputData: { [key: string]: { value: string; error: string } } =
+      {};
+
+    // Check all the input data for errors - save new errors outside of state
+    for (const key of Object.keys(this.state.textInputs)) {
+      checkoutInputChceck(key, this.state.textInputs[key], (error: string) => {
+        newInputData[key] = { value: this.state.textInputs[key].value, error };
+      });
+      // Insted of setting error to state, modify newInputData object
+    }
+
+    console.log(newInputData);
+
+    for (const key of Object.keys(newInputData)) {
+      if (newInputData[key].error) {
+        // Every input element should be rendered with its identifier id
+        const el = document.getElementById(`${key}-input`);
+        if (el) {
+          // Scroll and focus first invalid field
+          window.scrollTo({ top: el.offsetTop });
+          el.focus();
+          // Load all errors from new object into state
+          return this.setState((state) => ({
+            textInputs: { ...state.textInputs, ...newInputData },
+          }));
+        }
+      }
+    }
+
+    // proceed if no errors occured
+    return navigator(routes.finishedOrder);
   };
 }
 
