@@ -22,6 +22,5 @@ type createProps = {
 
 export const createCookie = ({ name, value, expires }: createProps) => {
   const newCookie = `${name}=${value}; expires=${expires}`;
-  console.log(newCookie);
   document.cookie = newCookie;
 };

@@ -16,7 +16,6 @@ const checkLength =
   (min: number, max = 99) =>
   (value: string) => {
     value = value.replace(/\s+/gi, "");
-    console.log(value.length);
     if (value.length < min) {
       return `Min. length is ${min}!`;
     }
