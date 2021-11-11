@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router";
+import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components";
 import { NavbarCover } from "./components/navbar/";
@@ -20,7 +20,8 @@ export const routes = {
   home: "/",
   category: (category: string) => `/category/${category}`,
   product: (product: string) => `/product/${product}`,
-  checkout: "/checkout",
+  checkout: "/checkout/order",
+  finishedOrder: "/checkout/finished",
 };
 
 const Router = () => {
@@ -30,18 +31,20 @@ const Router = () => {
       <Container>
         <ShoppingCart />
         <NavbarCover />
-        <Route path={routes.home} exact component={() => <Home />} />
-        <Route
-          path={`${routes.category(":category")}`}
-          exact
-          component={() => <Category />}
-        />
-        <Route
-          path={`${routes.product(":product")}`}
-          exact
-          component={() => <Product />}
-        />
-        <Route path={routes.checkout} exact component={() => <Checkout />} />
+        <Switch>
+          <Route path={routes.home} exact component={() => <Home />} />
+          <Route
+            path={`${routes.category(":category")}`}
+            exact
+            component={() => <Category />}
+          />
+          <Route
+            path={`${routes.product(":product")}`}
+            exact
+            component={() => <Product />}
+          />
+          <Route path={routes.checkout} exact component={() => <Checkout />} />
+        </Switch>
       </Container>
     </BrowserRouter>
   );
