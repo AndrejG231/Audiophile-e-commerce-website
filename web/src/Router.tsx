@@ -20,7 +20,7 @@ export const routes = {
   home: "/",
   category: (category: string) => `/category/${category}`,
   product: (product: string) => `/product/${product}`,
-  checkout: "/checkout/order",
+  checkout: "/checkout/",
   finishedOrder: "/checkout/finished",
 };
 
@@ -43,7 +43,7 @@ const Router = () => {
             exact
             component={() => <Product />}
           />
-          <Route path={routes.checkout} exact component={() => <Checkout />} />
+          <Route path={routes.checkout} component={() => <Checkout />} />
         </Switch>
       </Container>
     </BrowserRouter>

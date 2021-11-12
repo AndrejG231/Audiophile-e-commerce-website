@@ -22,7 +22,6 @@ const defaultTextInputs = inputIdentifiers.reduce(
   {}
 );
 
-console.log(defaultTextInputs);
 
 class Checkout extends Container<props> {
   state = {

@@ -5,6 +5,9 @@ import CheckoutSummary from "../components/checkout_summary";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar";
 import { BackButton } from "../components/product_main_container/styles";
+import { Route } from "react-router-dom";
+import { routes } from "../Router";
+import CheckoutModal from "../components/checkout_modal";
 
 const GoBack = styled(BackButton)`
   margin-top: 16px;
@@ -16,9 +19,23 @@ const PaddingBox = styled.div`
   padding-right: 24px;
 `;
 
+const PageCover = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+`;
+
 const Checkout = () => {
   return (
     <>
+      <Route path={routes.finishedOrder}>
+        <PageCover />
+        <CheckoutModal />
+      </Route>
       <Navbar />
       <PaddingBox>
         <GoBack>Go back</GoBack>
