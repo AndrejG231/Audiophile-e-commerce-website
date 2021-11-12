@@ -14,6 +14,7 @@ const logos = {
   iconFacebook: "assets/shared/desktop/icon-facebook.svg",
   iconTwitter: "assets/shared/desktop/icon-twitter.svg",
   iconInstagram: "assets/shared/desktop/icon-instagram.svg",
+  iconPipe: "assets/shared/desktop/icon-pipe.svg",
 };
 
 const images = {
