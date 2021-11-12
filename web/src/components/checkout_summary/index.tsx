@@ -68,10 +68,12 @@ const CheckoutSummary = () => {
               <PriceName>Grand Total</PriceName>
               <PriceNum grand>
                 ${" "}
-                {prices.reduce(
-                  (acc: number, val: { val: number }) => acc + val.val,
-                  0
-                )}
+                {prices
+                  .reduce(
+                    (acc: number, val: { val: number }) => acc + val.val,
+                    0
+                  )
+                  .toLocaleString("en-US")}
               </PriceNum>
             </GrandTotal>
             <Subscribe to={[Checkout]}>
