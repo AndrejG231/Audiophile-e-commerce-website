@@ -37,13 +37,7 @@ const CheckoutSummary = () => {
                 ([key, value]: [string, { quantity: number }], index) =>
                   value.quantity ? (
                     <Item key={index}>
-                      <Subscribe to={[ScreenQuery]}>
-                        {(query: ScreenQuery) => (
-                          <ItemImage
-                            src={products[key].image[query.state.mediaQuery]}
-                          />
-                        )}
-                      </Subscribe>
+                      <ItemImage src={products[key].cart} />
                       <ProductInfo>
                         <ProductName>
                           {products[key].name

@@ -55,9 +55,7 @@ const ShoppingCart = () => {
                   <CartItemContainer key={index}>
                     <Subscribe to={[ScreenQuery]}>
                       {(query: ScreenQuery) => (
-                        <ProductImage
-                          src={products[key].image[query.state.mediaQuery]}
-                        />
+                        <ProductImage src={products[key].cart} />
                       )}
                     </Subscribe>
                     <ProductInfo>
