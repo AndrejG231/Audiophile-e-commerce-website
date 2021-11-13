@@ -8,6 +8,7 @@ import { BackButton } from "../components/product_main_container/styles";
 import { Route } from "react-router-dom";
 import { routes } from "../Router";
 import CheckoutModal from "../components/checkout_modal";
+import { goHomeId } from "../constants";
 
 const GoBack = styled(BackButton)`
   margin-top: 16px;
@@ -26,14 +27,21 @@ const PageCover = styled.div`
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  z-index: 20;
 `;
 
 const Checkout = () => {
   return (
     <>
       <Route path={routes.finishedOrder}>
-        <PageCover />
+        <PageCover
+          onClick={() => {
+            const el = document.getElementById(goHomeId);
+            if (el) {
+              window.scrollTo({ top: 200 });
+            }
+          }}
+        />
         <CheckoutModal />
       </Route>
       <Navbar />

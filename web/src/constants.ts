@@ -17,3 +17,5 @@ export const inputIdentifiers = [
   "emoney",
   "emoney-pin",
 ];
+
+export const goHomeId = "modal-go-home-button";

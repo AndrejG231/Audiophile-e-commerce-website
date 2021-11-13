@@ -1,7 +1,9 @@
 import React from "react";
+import { useHistory } from "react-router";
 import { Subscribe } from "unstated";
 import products from "../../data/products";
 import Cart from "../../states/Cart";
+import { BackHomeButton } from "./styles";
 import {
   CheckedCircle,
   CheckIcon,
@@ -22,8 +24,10 @@ import {
   OtherLine,
   OtherItems,
 } from "./styles";
+import { goHomeId } from "../../constants";
 
 const CheckoutModal = () => {
+  const nav = useHistory();
   return (
     <ModalContainer>
       <CheckedCircle>
@@ -85,6 +89,9 @@ const CheckoutModal = () => {
           );
         }}
       </Subscribe>
+      <BackHomeButton id={goHomeId} onClick={() => nav.push("/")}>
+        Back to home
+      </BackHomeButton>
     </ModalContainer>
   );
 };

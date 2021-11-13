@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import images from "../../data/images";
+
 import { ProductPrice as Price } from "../shopping_cart/styles";
+import { ContinueButton } from "../checkout_summary/styles";
 
 export const ProductPrice = Price;
 export { ProductInfo, ProductName } from "../shopping_cart/styles";
@@ -10,7 +12,7 @@ export const ModalContainer = styled.div`
   background: ${({ theme }) => theme.colors.white};
   padding: 32px;
   position: absolute;
-  z-index: 12;
+  z-index: 22;
   top: 224px;
   left: 24px;
   right: 24px;
@@ -116,4 +118,8 @@ export const GrandTotalNum = styled.span`
   display: block;
   font-weight: 700;
   margin-top: 8px;
+`;
+
+export const BackHomeButton = styled(ContinueButton)`
+  margin-top: 24px;
 `;

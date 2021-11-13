@@ -4,7 +4,6 @@ import { Subscribe } from "unstated";
 import products from "../../data/products";
 import ShoppingCart from "../../states/Cart";
 import Checkout from "../../states/Checkout";
-import { ScreenQuery } from "../../states/ScreenQuery";
 import {
   Container,
   Item,
