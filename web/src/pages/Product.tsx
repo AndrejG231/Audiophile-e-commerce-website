@@ -39,8 +39,9 @@ const Product = () => {
         <ProductGallery images={product.gallery} />
       </main>
       <CommonProductsTitle>You may also like</CommonProductsTitle>
-      {product.others.map((other) => (
+      {product.others.map((other, index) => (
         <ProductCommon
+          key={index}
           image={other.image}
           name={other.name}
           slug={other.slug}
