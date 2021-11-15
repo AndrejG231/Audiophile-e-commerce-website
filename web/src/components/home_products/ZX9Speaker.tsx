@@ -11,6 +11,7 @@ const ProductSpeakerBox = styled.div`
   border-radius: 8px;
   margin: 120px 24px 0 24px;
   overflow: hidden;
+  padding-top: 55px;
   padding-bottom: 55px;
   @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
     padding-top: 52px;

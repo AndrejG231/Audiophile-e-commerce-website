@@ -7,14 +7,12 @@ import { ScreenQuery } from "../../states/ScreenQuery";
 
 const ProductContainer = styled.div`
   position: relative;
-  min-height: 420px;
   background: transparent;
   border-radius: 8px;
   margin: 24px 24px 0 24px;
   overflow: hidden;
   @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
     display: grid;
-    min-height: none;
     margin: 32px 40px 0 40px;
     grid-template-columns: 1fr 1fr;
     gap: 11px;
@@ -29,20 +27,19 @@ const ProductImage = styled.img`
   object-fit: cover;
   @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
     margin: 0;
-    height: 320px;
+    min-height: 320px;
+    height: 100%;
   }
 `;
 
 const ProductInfoBox = styled.div`
   background: ${({ theme }) => theme.colors.gray};
   border-radius: 8px;
-  height: 200px;
   margin: 0;
   margin-top: 20px;
   padding: 40px 24px;
   @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
     margin: 0;
-    height: 320px;
     padding: 101px 40px;
   }
 `;
