@@ -7,12 +7,15 @@ import { ScreenQuery } from "../../states/ScreenQuery";
 
 const ProductSpeakerBox = styled.div`
   position: relative;
-  height: 320px;
   background: ${({ theme }) => theme.colors.gray};
   border-radius: 8px;
-  margin: 0 24px 0 24px;
+  margin: 24px 24px 0 24px;
   overflow: hidden;
-  margin-top: 24px;
+  padding: 101px 24px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    padding: 101px 62px;
+    margin: 32px 40px 0 40px;
+  }
 `;
 
 const ZX7Image = styled.img`
@@ -23,6 +26,8 @@ const ZX7Image = styled.img`
   margin: auto;
   object-fit: cover;
   object-position: right;
+  top: 0;
+  left: 0;
 `;
 
 const ProductSpeakerTitle = styled.span`
@@ -31,16 +36,16 @@ const ProductSpeakerTitle = styled.span`
   ${({ theme }) => theme.fonts.h4};
   text-align: left;
   color: ${({ theme }) => theme.colors.black};
-  margin-top: 100px;
-  margin-left: 24px;
   padding-right: 10px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}) {
+    margin-left: 62px;
+  }
 `;
 
 const SeeProductButton = styled(ButtonColor)`
   display: block;
   position: relative;
   margin-top: 24px;
-  margin-left: 24px;
   background: transparent;
   outline: 1px solid black;
   color: ${({ theme }) => theme.colors.black};
@@ -51,6 +56,9 @@ const SeeProductButton = styled(ButtonColor)`
   /* Hide speaker under button (very small screen fix) */
   @media screen and (max-width: 320px) {
     background: ${({ theme }) => theme.colors.gray};
+  }
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin-top: 32px;
   }
 `;
 
