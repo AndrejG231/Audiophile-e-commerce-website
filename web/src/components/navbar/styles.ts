@@ -26,6 +26,10 @@ export const Logo = styled.div`
   position: absolute;
   margin-left: 50%;
   transform: translateX(-50%);
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin-left: 80px;
+    transform: none;
+  } ;
 `;
 
 export const CartButton = styled.div`
@@ -53,6 +57,13 @@ export const NavUnderline = styled.div`
   width: 100%;
   height: 1px;
   background: ${({ theme }) => theme.colors.grayLine};
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    position: absolute;
+    width: calc(100% - 78px);
+    margin: 0 39px;
+    top: 88px;
+    z-index: 10;
+  } ;
 `;
 
 export const NavContainer = styled.div`

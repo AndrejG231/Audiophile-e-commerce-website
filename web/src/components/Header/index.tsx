@@ -1,6 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router";
 import { routes } from "../../Router";
+import { ScreenQuery } from "../../states/ScreenQuery";
+import { Subscribe } from "unstated";
 import {
   Container,
   NewProductArea,
@@ -8,13 +10,20 @@ import {
   NewProductTitle,
   NewProductDetail,
   SeeProductButton,
+  Background,
 } from "./styles";
+import images from "../../data/images";
 
 const Header = () => {
   const nav = useHistory();
 
   return (
     <Container>
+      <Subscribe to={[ScreenQuery]}>
+        {(query: ScreenQuery) => (
+          <Background src={images.header[query.state.mediaQuery]} />
+        )}
+      </Subscribe>
       <NewProductArea>
         <NewProductAnnounce>New product</NewProductAnnounce>
         <NewProductTitle>
