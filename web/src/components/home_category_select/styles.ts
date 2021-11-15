@@ -5,6 +5,9 @@ export const Box = styled.div`
   height: 220px;
   margin: 8px 24px 0px 24px;
   position: relative;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 0;
+  }
 `;
 
 export const InboxOverlay = styled.div`
@@ -68,4 +71,10 @@ export const CategoryName = styled.span`
 
 export const OuterContainer = styled.div<{ lower?: boolean }>`
   margin-top: ${({ lower }) => (lower ? 120 : 32)}px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 96px 39px 0 39px;
+  }
 `;

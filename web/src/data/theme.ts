@@ -1,5 +1,5 @@
 const sizes = {
-  tablet: 460,
+  tablet: 580,
   desktop: 900,
 };
 
