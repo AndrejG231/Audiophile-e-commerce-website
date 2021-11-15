@@ -75,6 +75,6 @@ export const OuterContainer = styled.div<{ lower?: boolean }>`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    margin: 96px 39px 0 39px;
+    margin: 96px 40px 0 40px;
   }
 `;

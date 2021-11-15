@@ -7,12 +7,16 @@ import { ScreenQuery } from "../../states/ScreenQuery";
 
 const ProductSpeakerBox = styled.div`
   position: relative;
-  height: 600px;
   background: ${({ theme }) => theme.colors.brown};
   border-radius: 8px;
-  margin: 0 24px 0 24px;
+  margin: 120px 24px 0 24px;
   overflow: hidden;
-  margin-top: 120px;
+  padding-bottom: 55px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    padding-top: 52px;
+    padding-bottom: 64px;
+    margin: 96px 40px 0 40px;
+  }
 `;
 
 const CircleBackground = styled.img.attrs(() => ({
@@ -23,6 +27,10 @@ const CircleBackground = styled.img.attrs(() => ({
   top: -120px;
   left: 50%;
   transform: translateX(-50%);
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    width: 944px;
+    top: -268px;
+  }
 `;
 
 const ZX9Image = styled.img`
@@ -30,7 +38,9 @@ const ZX9Image = styled.img`
   width: 172px;
   display: block;
   margin: auto;
-  margin-top: 55px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    width: 197px;
+  }
 `;
 
 const ProductSpeakerTitle = styled.span`
@@ -38,11 +48,16 @@ const ProductSpeakerTitle = styled.span`
   text-align: center;
   ${({ theme }) => theme.fonts.h2};
   color: ${({ theme }) => theme.colors.white};
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   letter-spacing: 1.29px;
   margin-top: 35px;
-  height: 80px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin-top: 64px;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    letter-spacing: 2px;
+  }
 `;
 
 const ProductSpeakerDetail = styled.p`
@@ -64,6 +79,9 @@ const SeeProductButton = styled(ButtonColor)`
   background: ${({ theme }) => theme.colors.black};
   &:hover {
     background: ${({ theme }) => theme.colors.grayLine};
+  }
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin-top: 40px;
   }
 `;
 
