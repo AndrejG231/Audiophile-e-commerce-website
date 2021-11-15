@@ -10,9 +10,15 @@ const ProductContainer = styled.div`
   min-height: 420px;
   background: transparent;
   border-radius: 8px;
-  margin: 0 24px 0 24px;
+  margin: 24px 24px 0 24px;
   overflow: hidden;
-  margin-top: 24px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    display: grid;
+    min-height: none;
+    margin: 32px 40px 0 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+  }
 `;
 
 const ProductImage = styled.img`
@@ -21,6 +27,10 @@ const ProductImage = styled.img`
   height: 200px;
   border-radius: 8px;
   object-fit: cover;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 0;
+    height: 320px;
+  }
 `;
 
 const ProductInfoBox = styled.div`
@@ -30,6 +40,11 @@ const ProductInfoBox = styled.div`
   margin: 0;
   margin-top: 20px;
   padding: 40px 24px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 0;
+    height: 320px;
+    padding: 101px 40px;
+  }
 `;
 
 const ProductSpeakerTitle = styled.span`
