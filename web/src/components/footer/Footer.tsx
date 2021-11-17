@@ -6,11 +6,14 @@ import { routes } from "../../Router";
 
 const Box = styled.div`
   position: relative;
-  min-height: 654px;
   background: ${({ theme }) => theme.colors.lightBlack};
   width: 100%;
   margin-top: 120px;
   padding-bottom: 38px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin-top: 96px;
+    padding: 0 40px 46px 40px;
+  }
 `;
 
 const TopLine = styled.div`
@@ -18,6 +21,9 @@ const TopLine = styled.div`
   height: 4px;
   background: ${({ theme }) => theme.colors.brown};
   margin: auto;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 0;
+  }
 `;
 
 export const Logo = styled.div`
@@ -26,16 +32,25 @@ export const Logo = styled.div`
   background: url(${images.logo});
   margin: auto;
   margin-top: 48px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 0;
+    margin-top: 56px;
+  }
 `;
 
 const NavContainer = styled.nav`
   width: 108px;
-  height: 148px;
   margin: auto;
   margin-top: 48px;
   display: grid;
   gap: 16px;
   grid-template-columns: 100%;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 0;
+    margin-top: 32px;
+    grid-template-columns: auto auto auto auto;
+    gap: 34px;
+  }
 `;
 
 const NavItem = styled.span`
@@ -58,6 +73,12 @@ const AudiophileDesc = styled.p`
   color: ${({ theme }) => theme.colors.grayLine};
   margin: 48px 24px 0 24px;
   text-align: center;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+    margin-top: 32px;
+  }
 `;
 
 const CopyrightClaim = styled.span`
@@ -69,6 +90,11 @@ const CopyrightClaim = styled.span`
   text-align: center;
   font-weight: 700;
   padding: 0px 10px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    padding: 0;
+    margin: 80px 0 0 0;
+    text-align: left;
+  }
 `;
 
 const SocialIconsBar = styled.div`
@@ -79,6 +105,13 @@ const SocialIconsBar = styled.div`
   margin: auto;
   margin-top: 48px;
   gap: 16px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    padding: 0;
+    margin: 80px auto 0 0;
+    position: absolute;
+    bottom: 46px;
+    right: 40px;
+  }
 `;
 
 const SocialIcon = styled.img`
