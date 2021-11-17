@@ -8,9 +8,11 @@ const GearContainer = styled.aside`
   position: relative;
   min-height: 700px;
   background: transparent;
-  margin: 0 24px 0 24px;
-  margin-top: 120px;
+  margin: 120px 24px 0 24px;
   padding-bottom: 15px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 96px 40px 0 40px;
+  }
 `;
 
 const GearImage = styled.img`
@@ -29,6 +31,10 @@ const GearTitle = styled.span`
   color: ${({ theme }) => theme.colors.black};
   margin-top: 40px;
   letter-spacing: 1px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 63px 38px 0 38px;
+    ${({ theme }) => theme.fonts.h2};
+  }
 `;
 
 const WordHiglight = styled.span`
@@ -42,6 +48,11 @@ const GearDesc = styled.p`
   text-align: center;
   margin-top: 32px;
   line-height: 25px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    ${({ theme }) => theme.fonts.body};
+    margin: 32px 48px 0 48px;
+    font-weight: 500;
+  }
 `;
 
 const BestGear = () => {
