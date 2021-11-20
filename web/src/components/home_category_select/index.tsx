@@ -41,9 +41,9 @@ const SelectCategory: FC<SelectCategoryProps> = ({ image, category }) => {
   );
 };
 
-const CategorySelection: FC<{ lower?: boolean }> = ({ lower }) => {
+const CategorySelection: FC<{ lower?: boolean; nav?: boolean }> = (props) => {
   return (
-    <OuterContainer lower={lower}>
+    <OuterContainer {...props}>
       <SelectCategory
         category="headphones"
         image={images.categoryThumbnail.headphones}

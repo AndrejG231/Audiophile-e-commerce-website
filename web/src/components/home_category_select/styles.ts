@@ -69,12 +69,12 @@ export const CategoryName = styled.span`
   color: ${({ theme }) => theme.colors.black};
 `;
 
-export const OuterContainer = styled.div<{ lower?: boolean }>`
+export const OuterContainer = styled.div<{ lower?: boolean; nav?: boolean }>`
   margin-top: ${({ lower }) => (lower ? 120 : 32)}px;
   @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    margin: 96px 40px 0 40px;
+    margin: ${({ lower, nav }) => (lower ? 96 : nav ? 56 : 96)}px 40px 0 40px;
   }
 `;

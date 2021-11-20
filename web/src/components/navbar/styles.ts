@@ -78,6 +78,10 @@ export const NavContainer = styled.div`
   padding-bottom: 35px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    padding-bottom: 67px;
+    padding-top: 0;
+  }
 `;
 
 export const NavCover = styled.div<{ cover: boolean }>`
