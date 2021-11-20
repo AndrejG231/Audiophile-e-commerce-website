@@ -6,12 +6,12 @@ import images from "../../data/images";
 
 const GearContainer = styled.aside`
   position: relative;
-  min-height: 700px;
   background: transparent;
   margin: 120px 24px 0 24px;
   padding-bottom: 15px;
   @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
     margin: 96px 40px 0 40px;
+    padding: 0;
   }
 `;
 

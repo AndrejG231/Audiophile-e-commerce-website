@@ -48,7 +48,6 @@ export const NavbarContainer = styled.div`
   width: 100%;
   height: 88px;
   padding-top: 32.5px;
-  background: ${({ theme }) => theme.colors.black};
   z-index: 11;
   position: relative;
 `;
@@ -56,13 +55,15 @@ export const NavbarContainer = styled.div`
 export const NavUnderline = styled.div`
   width: 100%;
   height: 1px;
+  position: absolute;
+  top: 88px;
+  z-index: 10;
   background: ${({ theme }) => theme.colors.grayLine};
   @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
     position: absolute;
     width: calc(100% - 78px);
     margin: 0 39px;
     top: 88px;
-    z-index: 10;
   } ;
 `;
 

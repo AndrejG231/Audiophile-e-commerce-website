@@ -5,13 +5,12 @@ import { ButtonColor } from "../buttons";
 // Navbar
 export const Container = styled.header`
   background: ${({ theme }) => theme.colors.black};
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  padding-bottom: 167px;
+  padding-bottom: 112px;
   width: 100%;
-  overflow: hidden;
-  position: relative;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    padding-bottom: 167px;
+  }
+  /* Cant have relative position - background attached to parent */
 `;
 
 export const Background = styled.img`
@@ -21,7 +20,10 @@ export const Background = styled.img`
   object-fit: cover;
   object-position: bottom center;
   width: 100%;
-  height: 100%;
+  height: 600px;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    height: 729px;
+  }
 `;
 
 export const NewProductArea = styled.div`

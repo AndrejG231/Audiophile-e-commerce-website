@@ -1,4 +1,4 @@
-export const _SERVER = "http://192.168.100.146:3000/";
+export const _SERVER = "http://192.168.0.150:3000/";
 
 export const inputGroups = {
   payMethod: "formPaymentMethod",
