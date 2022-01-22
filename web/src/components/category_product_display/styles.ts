@@ -4,6 +4,9 @@ import { ButtonColor } from "../buttons";
 export const ProductContainer = styled.div`
   margin: 64px 24px 120px 24px;
   position: relative;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 120px 40px;
+  }
 `;
 
 export const ProductImage = styled.img`
@@ -19,12 +22,19 @@ export const NewProductNotify = styled.span`
   ${({ theme }) => theme.fonts.overline}
   margin-bottom: 24px;
   text-align: center;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin-bottom: 16px;
+  }
 `;
 
 export const ProductName = styled.h3`
   ${({ theme }) => theme.fonts.h4}
   margin: 24px 6px;
   text-align: center;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 0 100px 32px 100px;
+    ${({ theme }) => theme.fonts.h2};
+  }
 `;
 
 export const ProductDesc = styled.p`
@@ -32,6 +42,10 @@ export const ProductDesc = styled.p`
   text-align: center;
   margin: 24px 10px;
   font-weight: 200;
+  @media screen and (min-width: ${({ theme }) => theme.sizes.tablet}px) {
+    margin: 0 100px 24px 100px;
+    ${({ theme }) => theme.fonts.body};
+  }
 `;
 
 export const SeeProductButton = styled(ButtonColor)`
