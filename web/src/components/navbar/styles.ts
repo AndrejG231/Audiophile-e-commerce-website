@@ -44,12 +44,14 @@ export const CartButton = styled.div`
   position: absolute;
 `;
 
-export const NavbarContainer = styled.div`
+export const NavbarContainer = styled.div<{ transparent?: boolean }>`
   width: 100%;
   height: 88px;
   padding-top: 32.5px;
   z-index: 11;
   position: relative;
+  background: ${({ theme, transparent }) =>
+    transparent ? "transparent" : theme.colors.black};
 `;
 
 export const NavUnderline = styled.div`

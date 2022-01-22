@@ -8,17 +8,21 @@ import {
   NavContainer,
   NavCover,
 } from "./styles";
-import React from "react";
+import React, { FC } from "react";
 import { useHistory } from "react-router-dom";
 import { Subscribe } from "unstated";
 import DisplayStates from "../../states/DisplayStates";
 import CategorySelection from "../home_category_select";
 
-const Navbar = () => {
+interface props {
+  transparent?: boolean;
+}
+
+const Navbar: FC<props> = ({ transparent }) => {
   const nav = useHistory();
   return (
     <>
-      <NavbarContainer>
+      <NavbarContainer transparent={transparent}>
         <Subscribe to={[DisplayStates]}>
           {(display: DisplayStates) => (
             <Bar>

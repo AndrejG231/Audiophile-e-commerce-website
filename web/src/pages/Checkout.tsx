@@ -5,7 +5,7 @@ import CheckoutSummary from "../components/checkout_summary";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar";
 import { BackButton } from "../components/product_main_container/styles";
-import { Route } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 import { routes } from "../Router";
 import CheckoutModal from "../components/checkout_modal";
 import { goHomeId } from "../constants";
@@ -31,6 +31,7 @@ const PageCover = styled.div`
 `;
 
 const Checkout = () => {
+  const nav = useHistory();
   return (
     <>
       <Route path={routes.finishedOrder}>
@@ -46,7 +47,7 @@ const Checkout = () => {
       </Route>
       <Navbar />
       <PaddingBox>
-        <GoBack>Go back</GoBack>
+        <GoBack onClick={nav.goBack}>Go back</GoBack>
         <CheckoutForm />
         <CheckoutSummary />
       </PaddingBox>
