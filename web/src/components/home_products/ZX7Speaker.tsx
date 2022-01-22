@@ -4,6 +4,8 @@ import { ButtonColor } from "../buttons";
 import images from "../../data/images";
 import { Subscribe } from "unstated";
 import { ScreenQuery } from "../../states/ScreenQuery";
+import { routes } from "../../Router";
+import { useHistory } from "react-router-dom";
 
 const ProductSpeakerBox = styled.div`
   position: relative;
@@ -65,6 +67,7 @@ const SeeProductButton = styled(ButtonColor)`
 // Component
 
 const ZX7ProductView = () => {
+  const { push } = useHistory();
   return (
     <ProductSpeakerBox>
       <Subscribe to={[ScreenQuery]}>
@@ -73,7 +76,9 @@ const ZX7ProductView = () => {
         )}
       </Subscribe>
       <ProductSpeakerTitle>ZX7 SPEAKER</ProductSpeakerTitle>
-      <SeeProductButton>see product</SeeProductButton>
+      <SeeProductButton onClick={() => push(routes.product("zx7-speaker"))}>
+        see product
+      </SeeProductButton>
     </ProductSpeakerBox>
   );
 };

@@ -4,6 +4,8 @@ import { ButtonColor } from "../buttons";
 import images from "../../data/images";
 import { Subscribe } from "unstated";
 import { ScreenQuery } from "../../states/ScreenQuery";
+import { routes } from "../../Router";
+import { useHistory } from "react-router-dom";
 
 const ProductSpeakerBox = styled.div`
   position: relative;
@@ -89,6 +91,7 @@ const SeeProductButton = styled(ButtonColor)`
 // Component
 
 const ZX9ProductView = () => {
+  const { push } = useHistory();
   return (
     <ProductSpeakerBox>
       <CircleBackground />
@@ -106,7 +109,9 @@ const ZX9ProductView = () => {
         Upgrade to premium speakers that are phenomenally built to deliver truly
         remarkable sound.
       </ProductSpeakerDetail>
-      <SeeProductButton>see product</SeeProductButton>
+      <SeeProductButton onClick={() => push(routes.product("zx9-speaker"))}>
+        see product
+      </SeeProductButton>
     </ProductSpeakerBox>
   );
 };
