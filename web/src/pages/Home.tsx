@@ -1,6 +1,6 @@
 import React from "react";
 import BestGear from "../components/footer/BestGear";
-import Footer from "../components/footer/Footer";
+import ShopSum from "../components/footer/ShopSum";
 import Header from "../components/header";
 import {
   ZX9ProductView,
@@ -23,7 +23,7 @@ const Home = () => {
         <YX1ProductView />
       </main>
       <BestGear />
-      <Footer />
+      <ShopSum />
     </>
   );
 };

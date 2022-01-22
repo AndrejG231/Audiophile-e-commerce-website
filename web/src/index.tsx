@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
  
   /* Default texts */
   blockquote, dl, dd, h1, h2, h3, h4,
@@ -23,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: inherit;
     font-weight: inherit;
+  }
+
+  span {
+    user-select: none;
   }
   
   /* Unstyled lists */

@@ -121,7 +121,7 @@ const SocialIcon = styled.img`
   object-fit: contain;
 `;
 
-const Footer = () => {
+const ShopSum = () => {
   const nav = useHistory();
   return (
     <Box>
@@ -155,4 +155,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default ShopSum;

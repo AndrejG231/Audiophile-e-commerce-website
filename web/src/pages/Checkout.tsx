@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import CheckoutForm from "../components/checkout_form";
 import CheckoutSummary from "../components/checkout_summary";
-import Footer from "../components/footer/Footer";
+import ShopSum from "../components/footer/ShopSum";
 import Navbar from "../components/navbar";
 import { BackButton } from "../components/product_main_container/styles";
 import { Route, useHistory } from "react-router-dom";
@@ -51,7 +51,7 @@ const Checkout = () => {
         <CheckoutForm />
         <CheckoutSummary />
       </PaddingBox>
-      <Footer />
+      <ShopSum />
     </>
   );
 };

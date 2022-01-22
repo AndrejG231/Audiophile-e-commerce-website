@@ -11,7 +11,7 @@ import ProductCommon from "../components/product_common";
 import SelectCategory from "../components/home_category_select";
 import CategorySelection from "../components/home_category_select";
 import BestGear from "../components/footer/BestGear";
-import Footer from "../components/footer/Footer";
+import ShopSum from "../components/footer/ShopSum";
 
 const Product = () => {
   const { product: productKey } = useParams<{ product: string }>();
@@ -49,7 +49,7 @@ const Product = () => {
       ))}
       <CategorySelection lower />
       <BestGear />
-      <Footer />
+      <ShopSum />
     </>
   );
 };

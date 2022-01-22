@@ -6,7 +6,8 @@ import getProducts from "../util/getCategoryProducts";
 import CategoryProductDisplay from "../components/category_product_display";
 import { routes } from "../Router";
 import BestGear from "../components/footer/BestGear";
-import Footer from "../components/footer/Footer";
+import ShopSum from "../components/footer/ShopSum";
+import CategorySelection from "../components/home_category_select";
 
 // Styles
 const Header = styled.header`
@@ -45,8 +46,11 @@ const Category = () => {
           />
         ))}
       </main>
-      <BestGear />
-      <Footer />
+      <footer>
+        <CategorySelection lower />
+        <BestGear />
+        <ShopSum />
+      </footer>
     </>
   );
 };
